@@ -31,3 +31,25 @@
     text-wrap: balance;
   }
 }
+
+@layer components {
+
+  .glassmorphism {
+    @apply bg-white bg-opacity-20 backdrop-blur-md rounded-lg;
+  }
+@keyframes move {
+  0% { transform: translate(0, 0);}
+  25% { transform: translate(50vw, 50vh);}
+  50% { transform: translate(100vw, 0); }
+  75% { transform: translate(50vw, -50vh);}
+  100% { transform: translate(0, 0);}
+}
+
+.animate-move {
+  animation: move 25s linear infinite;
+}
+
+.delay-2000{
+  animation-delay: 2s;
+}
+}
