@@ -35,7 +35,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({ texts, speed = 100, delayBe
     }, [lineIndex, charIndex, texts, speed, delayBetweenLines, displayedText]);
 
     return (
-        <div className="text-xl text-slate-700 mt-4 drop-shadow-lg text-center whitespace-pre-line">
+        <div className="text-xl text-white mt-4 drop-shadow-lg text-center whitespace-pre-line">
             {displayedText}
             <span className="border-r-2  ml-1 border-slate-100 animate-pulse"></span>
         </div>

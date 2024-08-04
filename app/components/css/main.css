@@ -1,5 +1,9 @@
-.glassmorphism {
+/* .glassmorphism {
     background: rgba(255, 255, 255, 0.644);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-}
+} */
+
+.custom-bg{
+    background-image: url('/public/bg.png');
+   }
