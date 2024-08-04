@@ -37,7 +37,11 @@
 @layer components {
 
   .glassmorphism {
-    @apply bg-white bg-opacity-20 backdrop-blur-md rounded-lg;
+    @apply bg-white bg-opacity-5 backdrop-blur-sm rounded-lg;
+  }
+
+  .glassmorphismForWhoAmI{
+    @apply bg-white bg-opacity-10 backdrop-blur-sm rounded-lg;
   }
 @keyframes move {
   0% { transform: translate(0, 0);}
