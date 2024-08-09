@@ -1,96 +1,90 @@
+"use client";
+import React, { useEffect, useState, useRef }  from "react";
+import { ParallaxBanner } from "react-scroll-parallax";
+
 import Image from "next/image";
-import  './components/css/main.css';
-import React,{useState, useEffect} from "react";
+import CoverScreen from "./CoverScreen";
 import TypingEffect from "./components/component/typingEffect";
-import TypingPageEffect from "./components/component/typingPageEffect";
-import BouncingLiquid from "./components/component/boucingEffect";
+import WhoAmIScreen from "./WhoAmIScreen";
+import AboutMeScreen from "./components/AboutMeScreen";
+import Particles from "./components/utility/particles";
+
+
 export default function Home() {
-  return (
-  
-    <main className="mx-auto">
-      <div className=" relative w-full h-screen mx-auto overflow-hidden">
-          <div className=" flex items-center h-full">
-            <Image src='/bg.png' fill={true} alt="background photo" className=" relative object-cover w-full h-full backdrop-blur-sm bg-scroll "/>
+    const [isTextVisible, setIsTextVisible] = useState(false);
+  const textRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    if (textRef.current) {
+      const rect = textRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const isVisible = rect.top < windowHeight && rect.bottom > 0;
+      setIsTextVisible(isVisible);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+    return (
+        <main className="parallax-container">
+
+            <ParallaxBanner
+                layers={[
+                    {image: './bg.png', speed: -20},
+                ]}
+                style={{height:'100vh', backgroundPosition:"cover"}}>
+                
+                <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-b from-transparent to-black bg-opacity-10 backdrop-blur-sm shadow-2xl"></div>
+                {/* <div className=" absolute w-11/12 glassmorphism h-full  drop-shadow-lg  mx-auto justify-center items-center shadow-lg"></div> */}
+                  <CoverScreen/>
+                {/* <div className=" absolute items-center justify-center flex">
+                <div 
+                        ref={textRef} 
+                        className={`content-center transition-opacity duration-700 ${isTextVisible ? 'opacity-100' : 'opacity-0'}`}
+                    >
+                        <h1 className="text-white text-4xl">Black Screen Section</h1>
           </div>
+                </div> */}
+            </ParallaxBanner>
 
-          <div className=" absolute inset-0 flex flex-col items-center">
-            <div className=" flex flex-col w-11/12 glassmorphism h-screen  drop-shadow-lg  mx-auto items-center shadow-lg">
-              
-              <Image src='/profile.png' alt="profile" width={200} height={200} className="object-cover drop-shadow-md mt-24 bg-transparent px-4 py-4 rounded-full"/>
-              <Image src='/curveDesign1.png' width={250} height={250} alt="curve" className=" absolute object-cover mt-16 drop-shadow-2xl" />
-              
-              <div className="mt-8">
-                <p className=" text-3xl font-bold text-white tracking-wide">Kumari Kadial @ JuJu</p>
-              </div>
-              <TypingEffect texts={[
-                "Senior Business Development Executive",
-                "Ocean - Air - Land - Rail (Freight) Management"
-              ]} 
-              speed={100}
-              delayBetweenLines = {1000} />
-
-              {/* <div className=" mt-4">
-                <h3 className=" text-3xl font-semibold text-white"> BIO </h3>
-              </div>   */}
-
-
-            </div>
-          </div>
-      
-      </div>
-       
-       
-       <div className=" relative w-full h-screen mx-auto overflow-hidden">
-       <div className=" flex items-center h-full">
-        <Image src='/bg6.png' fill={true} alt="background photo" className="relative object-cover w-full h-full opacity-80 blur-sm"/>
-       </div>
-       <div className="absolute inset-0 flex flex-col items-center">
-          <div className="flex flex-col w-11/12 glassmorphismForWhoAmI h-screen  drop-shadow-lg  mx-auto items-center shadow-lg">
-            <h3 className=" text-3xl font-semibold text-white mt-24"> WHO AM I </h3>
-            <div className=" mt-2">
-              <TypingPageEffect texts={[
-                "I am a dedicated Logistics Specialist with over three years of practical experience and a strong academic foundation from various universities and colleges.",
-                "My role at Nordic Group Limited has involved collaborating with leading industry players such as Maersk, MSC, DHL, Kuehne+Nagel, and DB Schenker.",
-                "This has provided me with valuable insights across multiple sectors, including garment trading, automotive distribution, pharmaceuticals, food and beverage, chemicals, and NGO/INGO organizations.",
-                "This diverse experience has refined my expertise in logistics and supply chain management, with a strong focus on compliance standards.",
-                "I am enthusiastic about leveraging my skills to make impactful contributions and drive success to your esteemed organization."
-              ]}  
-              speed={50}
-              delayBetweenLines = {1000} />
-            </div>
-          </div>
-        </div>  
-       </div>
-
-       <div className=" relative w-full h-screen mx-auto overflow-hidden">
-       <div className=" flex items-center h-full">
-        <Image src='/bg4.png' fill={true} alt="background photo" className="relative object-cover w-full h-full opacity-80 blur-sm"/>
-       </div>
-       <div className="absolute inset-0 flex flex-col items-center">
-          <div className="flex flex-col w-11/12 glassmorphismForWhoAmI h-screen  drop-shadow-lg  mx-auto items-center shadow-lg">
-            <h3 className=" text-3xl font-semibold text-white mt-24 px-4"> 
-            Driven Professional Seeking Challenging Opportunities in a Dynamic Environment
-            </h3>
-            <div className=" mt-2">
-              <TypingPageEffect texts={[
-                "I am eager to leverage my strong work ethic, education, and expertise in a role that challenges me and aligns with my passion for growth.",
-                "Committed to achieving excellence and contributing to team success, I thrive in diverse settings where I can apply my skills, pursue personal development, and drive meaningful results for the company.",
-              ]}  
-              speed={50}
-              delayBetweenLines = {1000} />
+            <div className=" bg-black" style={{ height:'120vh'}}>
+            <Particles className=" w-full h-full absolute pointer-events-none" quantity={50} />
+                <div className=" z-40">
+                        <WhoAmIScreen/>
+                </div>
             </div>
 
-            {/* <div className=" mt-4">
-              <p className=" text-white px-6 py-4 opacity-90 bg-sky-800 text-justify backdrop-blur-xl drop-shadow-lg mx-24 rounded-lg">
-                <em> " I am eager to leverage my strong work ethic, education, and expertise in a role that challenges me and aligns with my passion for growth. 
-                Committed to achieving excellence and contributing to team success, I thrive in diverse settings where 
-                I can apply my skills, pursue personal development, and drive meaningful results for the company. "</em>
-              </p>
-            </div> */}
-          </div>
-        </div>  
-       </div>
+            <ParallaxBanner
+                layers={[
+                    { image: '/bg7.png', speed:-5 },
+                ]}
+                style={{ height: '100vh' }}
+                >
+             <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-t from-black via-transparent to-black bg-opacity-10 backdrop-blur-sm shadow-2xl"></div>
         
-    </main>
-  );
+             <AboutMeScreen/>
+         
+        </ParallaxBanner>
+        </main>
+        // <main className="  p-24">
+        //     <div className=" fixed inset-0 -z-10">
+        //     <Image src='/bg.png' 
+        //            fill={true} alt="background photo" 
+        //            className=" object-cover w-full h-full backdrop-blur-md bg-fixed "
+        //     />
+        //     <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-b from-transparent to-black bg-opacity-10 backdrop-blur-sm shadow-2xl"></div>
+        //     </div>
+            
+        //     <div className="flex flex-col items-center justify-between w-fit">
+        //         <CoverScreen/>
+        //         <WhoAmIScreen/>
+        //     </div>
+        // </main>
+
+    )
 }

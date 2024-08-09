@@ -26,6 +26,10 @@
     rgb(var(--background-start-rgb));
 } */
 
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -36,13 +40,69 @@
 
 @layer components {
 
+  .parallax-text{
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: transform 0.6s ease-out;
+    transform: scale(calc(0.8 + 1.5 * var(--progress)))
+  }
+
+  .parallax-text-about{
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: transform 1s ease-out;
+    transform: scale(calc(0.5 + 1.5 * var(--progress)));
+    width: 60%;
+    margin: auto
+  }
+
   .glassmorphism {
-    @apply bg-white bg-opacity-5 backdrop-blur-sm rounded-lg;
+    @apply bg-white bg-opacity-5 backdrop-blur-sm;
   }
 
   .glassmorphismForWhoAmI{
     @apply bg-white bg-opacity-10 backdrop-blur-sm rounded-lg;
   }
+
+  .parallax-container {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+  
+  .black-screen {
+    background-color: black;
+  }
+  
+  .transition-opacity {
+    transition: opacity 0.7s ease-in-out;
+  }
+
+  .whoAmIContainer{
+    margin-top: 4rem;
+  }
+
+  .whoAmIContainer div {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .whoAmIContainer .opacity100{
+    opacity: 1;
+  }
+
+
+
+
 @keyframes move {
   0% { transform: translate(0, 0);}
   25% { transform: translate(50vw, 50vh);}
