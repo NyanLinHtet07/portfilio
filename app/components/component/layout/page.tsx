@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import  './components/css/main.css';
 import React,{useState, useEffect} from "react";
 import TypingEffect from "../typingEffect";
 import TypingPageEffect from "../typingPageEffect";
