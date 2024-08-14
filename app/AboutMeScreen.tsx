@@ -2,7 +2,7 @@
 
 import React, {useEffect, useState, useRef} from "react"
 import { useParallax } from "react-scroll-parallax"
-import TypingPageEffect from "./component/typingPageEffect"
+import TypingPageEffect from "./components/component/typingPageEffect"
 import Image from "next/image"
 
 

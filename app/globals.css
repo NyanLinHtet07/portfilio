@@ -59,7 +59,7 @@ body{
   }
 
   .glassmorphism {
-    @apply bg-white bg-opacity-5 backdrop-blur-sm;
+    @apply bg-white bg-opacity-50 backdrop-blur-xl;
   }
 
   .glassmorphismForWhoAmI{
@@ -100,8 +100,20 @@ body{
     opacity: 1;
   }
 
-
-
+  .sliderContainer {
+    height: 400px; /* Adjust as needed */
+   
+  }
+  
+  .card {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .card.visible {
+    opacity: 1;
+  }
+  
 
 @keyframes move {
   0% { transform: translate(0, 0);}
@@ -118,4 +130,17 @@ body{
 .delay-2000{
   animation-delay: 2s;
 }
+}
+
+
+.custom-height {
+  height: 500px; /* Adjust the height as needed */
+}
+
+.custom-text-height {
+  height: 300px; /* Adjust the height as needed */
+}
+
+.custom-image-height {
+  height: 200px; /* Adjust the height as needed */
 }
