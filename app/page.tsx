@@ -44,8 +44,8 @@ export default function Home() {
                   backgroundSize: 'cover',
                   backgroundPosition: 'center', }}>
                 
-                <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-b from-transparent to-black bg-opacity-10 backdrop-blur-sm shadow-2xl"></div>
-                {/* <div className=" absolute w-11/12 glassmorphism h-full  drop-shadow-lg  mx-auto justify-center items-center shadow-lg"></div> */}
+                <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-b from-transparent to-black shadow-2xl"></div>
+                <div className=" absolute w-11/12 h-full  drop-shadow-lg  mx-auto justify-center items-center shadow-lg"></div>
                   <CoverScreen/>
                 {/* <div className=" absolute items-center justify-center flex">
                       <div 
@@ -57,7 +57,7 @@ export default function Home() {
                     </div> */}
             </ParallaxBanner>
 
-            <div className=" bg-black" style={{ height:'120vh'}}>
+            <div className=" bg-black" style={{ height:'100vh'}}>
               <Particles className=" w-full h-full absolute pointer-events-none" quantity={50} />
                 <div className=" z-40">
                         <WhoAmIScreen/>
@@ -91,8 +91,8 @@ export default function Home() {
                   {
                     speed: -15,
                     children: (
-                      <div className=" absolute inset-0 flex flex-col items-center justify-center">
-                        <h1 className="  text-white text-3xl"> 
+                      <div className=" absolute inset-0 flex flex-col items-center justify-start">
+                        <h1 className="  text-white text-4xl font-bold drop-shadow-lg text-center"> 
                         Driven Professional Seeking Challenging Opportunities in a Dynamic Environment 
                         </h1>
                         <div className=" text-white mt-5 mx-10 text-justify w-9/12 px-2 py-3 glassmorphism rounded-lg drop-shadow-2xl backdrop-blur-xl">
@@ -111,7 +111,8 @@ export default function Home() {
                           className=" w-8/12 object-cover"
                            style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
                         />
-          </div>
+                        <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-b from-transparent via-transparent to-black shadow-2xl"></div>
+                     </div>
                     ),
                   }
                 ]}
@@ -122,7 +123,8 @@ export default function Home() {
                 </ParallaxBanner>
 
 
-            <div className=" bg-black" style={{ height: '100vh'}}>
+            <div className=" bg-black relative" style={{ height: '120vh'}}>
+                <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-bl from-transparent via-transparent to-black"></div>
                 <EduScreen/>
             </div>
             <div className=" bg-black" style={{ height: '100vh'}}>

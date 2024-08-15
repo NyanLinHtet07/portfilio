@@ -25,11 +25,11 @@ export default function CoverScreen(){
             <Parallax scale={[0.5,1.5]}  speed={10}  className=" relative mt-24 w-60 h-60 mx-auto">
               <Image src='/profile.png' alt="profile" 
                       width={200} height={200} 
-                      className="object-cover drop-shadow-md px-4 py-4 rounded-full"/>
+                      className="object-cover drop-shadow-md px-4 py-4 rounded-full glassmorphismCover"/>
 
               <Image src='/curveDesign1.png' 
-                      width={220} height={220} alt="curve" 
-                      className=" absolute top-0 right-8 object-cover drop-shadow-2xl" />
+                      width={240} height={220} alt="curve" 
+                      className=" absolute -top-5 right-4 object-cover drop-shadow-2xl filter-white" />
             </Parallax>
             
             <div ref={parallax.ref} className="parallax-text text-center mb-10">
