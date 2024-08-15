@@ -5,11 +5,11 @@ import { useInView } from "react-intersection-observer"
 import {motion} from "framer-motion";
 
 const scores = [
-    {language: "English", score: 95, color: '#F5F6F4'},
-    {language: "Deutsh", score: 85, color: '#F27040'},
-    {language: "Burmese", score: 95, color: '#91B2B6'},
-    {language: "Nepalese", score: 90, color: '#E5E6E5'},
-    {language: "Hindi", score: 85, color: '#93AA97'},
+    {language: "English", score: 95, color: '#e63946'},
+    {language: "Deutsh", score: 85, color: '#f1faee'},
+    {language: "Burmese", score: 95, color: '#a8dadc'},
+    {language: "Nepalese", score: 90, color: '#457b9d'},
+    {language: "Hindi", score: 85, color: '#bde0fe'},
 ]
 
 const LanguageScreen:React.FC = () => {

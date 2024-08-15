@@ -24,12 +24,12 @@ const EduScreen = () => {
   }
 
   const eduList = [
-    {id:1, dip:"B.Sc. (Botany)", university:"Taunggyi University", duration:"2014 - 2019", note: null, img:"/certificate.jpg" },
-    {id:2, dip:"Diploma in International Business Management (US, OSG)", university:"Mimber Institute of Management Study", duration:"2020 February - 2020 December", note: null, img:"/certificate.jpg" },
-    {id:3, dip:"Logistics Materials and Supply Chain Management (UK, NCFE)", university:"Mimber Institute of Management Study", duration:"2022 June - 2022 October", note: "Distinction", img:"/certificate.jpg" },
-    {id:4, dip:"German Language Study A1 & A2", university:"Gothe Institude", duration:"2022 December - 2024 Present", note: null, img:"/certificate.jpg" },
-    {id:5, dip:"Cabin Crew Language and Operation", university:"Myanmar Flight Attendent School", duration:"2019", note: null, img:"/certificate.jpg" },
-    {id:6, dip:"Airline Ticket Reversation", university:"Trust Vocational Institute", duration:"2019", note: null, img:"/certificate.jpg" },
+    {id:1, dip:"B.Sc. (Botany)", university:"Taunggyi University", duration:"2014 - 2019", note: null, img:"/certificate.png" },
+    {id:2, dip:"Diploma in International Business Management (US, OSG)", university:"Mimber Institute of Management Study", duration:"2020 February - 2020 December", note: null, img:"/certificate.png" },
+    {id:3, dip:"Logistics Materials and Supply Chain Management (UK, NCFE)", university:"Mimber Institute of Management Study", duration:"2022 June - 2022 October", note: "Distinction", img:"/certificate.png" },
+    {id:4, dip:"German Language Study A1 & A2", university:"Gothe Institude", duration:"2022 December - 2024 Present", note: null, img:"/certificate.png" },
+    {id:5, dip:"Cabin Crew Language and Operation", university:"Myanmar Flight Attendent School", duration:"2019", note: null, img:"/certificate.png" },
+    {id:6, dip:"Airline Ticket Reversation", university:"Trust Vocational Institute", duration:"2019", note: null, img:"/certificate.png" },
   
   ]
 
@@ -159,7 +159,7 @@ const EduScreen = () => {
               transition
               className="w-full max-w-md rounded-xl bg-white/5 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
             >
-              <Image src="/certificate.jpg" width={900} height={900} alt="certificate" className="rounded-md drop-shadow-md" />
+              <Image src="/certificate.png" width={900} height={900} alt="certificate" className="rounded-md drop-shadow-md" />
               </DialogPanel>
             </div>
           </div>

@@ -57,7 +57,7 @@ export default function Home() {
                     </div> */}
             </ParallaxBanner>
 
-            <div className=" bg-black" style={{ height:'100vh'}}>
+            <div className=" bg-black" style={{ height:'120vh'}}>
               <Particles className=" w-full h-full absolute pointer-events-none" quantity={50} />
                 <div className=" z-40">
                         <WhoAmIScreen/>
@@ -85,34 +85,39 @@ export default function Home() {
                   {
                     speed: -20,
                     children: (
-                      <div className=" absolute inset-0 bg-black"></div>
+                      <div className=" absolute inset-0 bg-black h-full" style={{ height:'140vh'}}>
+                        <Particles className=" w-full h-full absolute pointer-events-none" quantity={50} />
+                      </div>
                     ),
                   },
                   {
                     speed: -15,
                     children: (
-                      <div className=" absolute inset-0 flex flex-col items-center justify-start">
-                        <h1 className="  text-white text-4xl font-bold drop-shadow-lg text-center"> 
+                      <div className=" absolute inset-0 flex flex-col items-center top-1/4">
+                        <h1 className="  text-white text-4xl font-bold drop-shadow-lg text-center w-10/12"> 
                         Driven Professional Seeking Challenging Opportunities in a Dynamic Environment 
                         </h1>
-                        <div className=" text-white mt-5 mx-10 text-justify w-9/12 px-2 py-3 glassmorphism rounded-lg drop-shadow-2xl backdrop-blur-xl">
+                        <div className=" text-white mt-5 mx-10 text-justify w-10/12 px-2 py-3 drop-shadow-2xl backdrop-blur-xl">
                         I am eager to leverage my strong work ethic, education, and expertise in a role that challenges me and aligns with my passion for growth.
                         Committed to achieving excellence and contributing to team success, I thrive in diverse settings where I can apply my skills, pursue personal development, and drive meaningful results for the company.
                         </div>
                       </div>
                     )
                   },
-                  { speed: -10,
+                  { speed: -5,
                     children: (
+                      <>
+                     
                       <div className="relative w-full h-full flex items-end justify-center">
                         <img 
-                          src="./globe.png" 
+                          src="./moon.png" 
                           alt="Globe"
-                          className=" w-8/12 object-cover"
-                           style={{ filter: "brightness(0) saturate(100%) invert(100%)" }}
+                          className=" w-full object-cover"
+                          
                         />
-                        <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-b from-transparent via-transparent to-black shadow-2xl"></div>
+                         <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-b from-transparent via-transparent to-black "></div>
                      </div>
+                     </>
                     ),
                   }
                 ]}
