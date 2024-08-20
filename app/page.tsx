@@ -10,7 +10,8 @@ import AboutMeScreen from "./AboutMeScreen";
 import Particles from "./components/utility/particles";
 import EduScreen from "./EduScreen";
 import LanguageScreen from "./LanguageScreen";
-
+import ExperienceScreen from "./ExperienceScreen";
+import AwardedScreen from "./AwardedScreen";
 
 
 export default function Home() {
@@ -134,6 +135,12 @@ export default function Home() {
             </div>
             <div className=" bg-black" style={{ height: '100vh'}}>
                 <LanguageScreen/>
+            </div>
+            <div className="bg-black" style={{ height:'auto'}}>
+                <AwardedScreen/>
+            </div>
+            <div className="bg-black" style={{ height:'auto'}}>
+                <ExperienceScreen/>
             </div>
         </main>
         // <main className="  p-24">
