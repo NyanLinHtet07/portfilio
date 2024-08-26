@@ -24,7 +24,7 @@ const LanguageScreen:React.FC = () => {
                     Accomplished Academic Achievements
                     </h2>
 
-                <div ref={ref} className="language-race w-10/12 mx-auto mt-10 bg-white bg-opacity-30 rounded-lg">
+                <div ref={ref} className="language-race w-10/12 mx-auto mt-10 bg-white bg-opacity-70 rounded-lg">
                     { scores.map((item, index) => (
                         <div className="  grid grid-cols-6 gap-2" key={index}>
                             <div className=" drop-shadow-lg mt-5 col-span-1 text-lg font-semibold" style={{ color: item.color }}>

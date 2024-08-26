@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react"
 import { Parallax, useParallax } from "react-scroll-parallax"
 import TypingPageEffect from "./components/component/typingPageEffect"
 import TypingEffect from "./components/component/typingEffect"
+import WordPullUp from "@/components/magicui/word-pull-up";
 
 
 const WhoAmIScreen = () => {
@@ -27,25 +28,27 @@ const WhoAmIScreen = () => {
     }, []);
     
 
-    const parallax = useParallax<HTMLDivElement>({
-        onProgressChange: (progress) => {
-            if(parallax.ref.current){
-                parallax.ref.current.style.setProperty(
-                    '--progress',
-                    progress.toString()
-                );
-            }
-        },
-    });
+    // const parallax = useParallax<HTMLDivElement>({
+    //     onProgressChange: (progress) => {
+    //         if(parallax.ref.current){
+    //             parallax.ref.current.style.setProperty(
+    //                 '--progress',
+    //                 progress.toString()
+    //             );
+    //         }
+    //     },
+    // });
 
     return(
         <div className=" py-20">
-             {/* <div className=" text-center text-white text-3xl font-bold mb-28">
-              BIO
-            </div> */}
-            <div ref={parallax.ref} className="parallax-text text-center mb-10 drop-shadow-xl"> 
+             
+            {/* <div ref={parallax.ref} className="parallax-text text-center mb-10 drop-shadow-xl"> 
                 WHO AM I 
-            </div>
+            </div> */}
+            <WordPullUp
+              className="text-2xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
+              words="WHO AM I"
+            />
             <div className=" mt-4 text-left w-10/12 mx-auto drop-shadow-xl">
             <TypingPageEffect texts={[
                 "I am a dedicated Logistics Specialist with over three years of practical experience and a strong academic foundation from various universities and colleges.",

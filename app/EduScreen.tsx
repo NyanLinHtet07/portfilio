@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Mousewheel, Pagination } from 'swiper/modules';
+import { Mousewheel, Pagination, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -18,8 +18,10 @@ import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 
 const EduScreen = () => {
   const [openModal, setOpenModal] = useState(false);
+  const [openImg, setImg] = useState('');
 
-  const open = () => {
+  const open = (img:any) => {
+    setImg(img)
     setOpenModal(true)
   }
 
@@ -70,12 +72,12 @@ const EduScreen = () => {
   return (
     <>
   <div>
-  <div className=" grid grid-cols-4 gap-4">
-      <div className=" col-span-2 text-white">
-      <Image src='/edu.png' width={400} height={800} alt="edu" className=" mx-auto" />
+  <div className=" grid grid-cols-5 gap-4">
+      <div className=" col-span-2 text-white mt-10 mx-auto">
+      <Image src='/edu.png' width={300} height={600} alt="edu" className="" />
       
       </div>
-      <div className=" col-span-2">
+      <div className=" col-span-3">
       <h2 className="text-white text-4xl mt-20 mb-12 font-bold drop-shadow-lg">
           Accomplished Academic Achievements
         </h2>
@@ -87,8 +89,8 @@ const EduScreen = () => {
         pagination={{
           clickable: true,
         }}
-        
-        modules={[ Pagination, Mousewheel]}
+        autoplay={true}
+        modules={[ Pagination, Mousewheel, Autoplay]}
         className="mySwiper h-screen"
       >
         {
@@ -107,7 +109,7 @@ const EduScreen = () => {
                     </div>
                   </div>
                 </div>
-                  <div className=" col-span-3 drop-shadow-2xl shadow-2xl glassmorphism md:w-96 py-3 px-4 rounded-md text-white opacity-95 transition-opacity duration-500">
+                  <div className=" col-span-3 drop-shadow-2xl shadow-2xl glassmorphism mx-2 py-3 px-4 rounded-md text-white opacity-95 transition-opacity duration-500">
                   <p className="text-2xl font-bold mt-4 mb-5">{ edu.dip }</p>
                     <div className="flex flex-row text-lg font-semibold px-2 my-2">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 mr-6">
@@ -136,7 +138,7 @@ const EduScreen = () => {
                     
                     <div className="flex ml-6 my-4">
                       <button type="button"
-                              onClick={open}>
+                              onClick={() => open(edu.img)}>
                       <Image src={edu.img} width={100} height={100} alt="certificate" className="rounded-md drop-shadow-md" />
                       </button>
                       
@@ -159,7 +161,7 @@ const EduScreen = () => {
               transition
               className="w-full max-w-md rounded-xl bg-white/5 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
             >
-              <Image src="/certificate.png" width={900} height={900} alt="certificate" className="rounded-md drop-shadow-md" />
+              <Image src={openImg} width={900} height={900} alt="certificate" className="rounded-md drop-shadow-md" />
               </DialogPanel>
             </div>
           </div>

@@ -45,6 +45,10 @@ const ExperienceScreen = () => {
         {/* Vertical line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white"></div>
 
+       
+        <div className=" absolute top-0 -mt-3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-8 border-white bg-transparent"></div>
+        <div className=" absolute bottom-0 -mb-7 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-6 w-6 rounded-full border-8 border-white bg-transparent"></div>
+
         {/* Experience Items */}
         {experiences.map((exp, index) => (
           <div
@@ -54,18 +58,18 @@ const ExperienceScreen = () => {
             }`}
           >
             <div
-              className={`relative w-5/12 p-4 bg-white text-black shadow-md rounded-lg ${
-                exp.position === "left" ? "mr-8" : "ml-8"
+              className={`relative w-4/12 p-4 bg-white bg-opacity-5 text-white shadow-md rounded-lg ${
+                exp.position === "left" ? " mr-36 text-left" : "ml-36 text-right"
               }`}
             >
               <h3 className="text-xl font-semibold">{exp.title}</h3>
-              <p className="text-gray-600">{exp.company}</p>
-              <p className="text-gray-500">{exp.duration}</p>
+              <p className="text-white">{exp.company}</p>
+              <p className="text-gray-200">{exp.duration}</p>
 
               {/* Connecting line */}
               <div
-                className={`absolute top-1/2 transform -translate-y-1/2 h-1 w-16 bg-white ${
-                  exp.position === "left" ? "-left-16" : "-right-16"
+                className={`absolute top-1/2 transform -translate-y-1/2 h-1 w-12 bg-white ${
+                  exp.position === "left" ? "-left-14" : "-right-14"
                 }`}
               ></div>
             </div>
