@@ -1,34 +1,54 @@
 "use client";
 
 import React from 'react';
+import {motion} from 'framer-motion';
+import { LampContainer } from '@/components/ui/lamp';
 
 const AwardedScreen = () => {
     return (
-        <div className='py-20'>
-            <h2 className="text-white text-4xl mt-40 font-bold drop-shadow-lg text-center mb-20">
-                HONORED WITH RECOGNIZED AWARDS
-            </h2>
+        <div className=' pt-32'>
+            <LampContainer>
+                <motion.h1
+                    initial={{ opacity:0.5, y: 100}}
+                    whileInView={{ opacity:1, y:0}}
+                    transition={{
+                        delay: 0.3,
+                        duration: 0.8,
+                        ease: "easeInOut"
+                    }}
+                    className='mt-8 bg-gradient-to-br from-slate-300 to-slate-600 py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-4xl'    
+                >
+                    HONORED WITH RECOGNIZED AWARDS
+                </motion.h1>
 
-            <div className=' px-4 py-6 rounded-lg drop-shadow-lg shadow-xl text-white w-8/12 text-center mx-auto'>
-                    <h2 className=' text-5xl font-bold'>March star of the month award in Oway Travel</h2>
-                    <h2 className=' font-semibold mt-10 text-4xl'>2020</h2>
-                </div>
+                <motion.p
+                    initial={{ opacity:0.5, y: 100}}
+                    whileInView={{ opacity:1, y:20}}
+                    transition={{
+                        delay: 0.5,
+                        duration: 0.9,
+                        ease: "easeInOut"
+                    }}
+                    className=' uppercase mt-8 bg-gradient-to-br text-white from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-2xl'    
+                >
+                    March star of the month award in Oway Travel <br /> 2020
+                </motion.p>
 
-            <div className=' px-4 py-6 rounded-lg drop-shadow-lg shadow-xl text-white w-8/12 text-center mx-auto'>
-                    <h2 className=' text-5xl font-bold'>Distinction Award in Supply Chain and Logistics Management (NCFE UK Diploma)</h2>
-                    <h2 className=' font-semibold mt-10 text-4xl'>2022</h2>
-                </div>
+                <motion.p
+                    initial={{ opacity:0.5, y: 100}}
+                    whileInView={{ opacity:1, y:40}}
+                    transition={{
+                        delay: 0.7,
+                        duration: 1,
+                        ease: "easeInOut"
+                    }}
+                    className=' uppercase mt-8 bg-gradient-to-br text-white from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-2xl'    
+                >
+                    Distinction Award in Supply Chain and Logistics Management (NCFE UK Diploma) <br /> 2022
+                </motion.p>
 
-            {/* <div className=' grid grid-cols-2 gap-4'>
-                <div className=' px-4 py-6 rounded-lg drop-shadow-lg shadow-xl bg-white w-8/12 text-center mx-auto'>
-                    <h2 className=' text-5xl font-bold'>March star of the month award in Oway Travel</h2>
-                    <h2 className=' text-lg font-semibold mt-5'>2020</h2>
-                </div>
-                <div className=' px-4 py-6 rounded-lg drop-shadow-lg shadow-xl bg-white w-8/12 text-center mx-auto'>
-                    <h2 className=' text-xl font-bold'>Distinction Award in Supply Chain and Logistics Management (NCFE UK Diploma)</h2>
-                    <h2 className=' text-lg font-semibold'>2022</h2>
-                </div>
-            </div> */}
+            </LampContainer>
+           
         </div>
     )
 }

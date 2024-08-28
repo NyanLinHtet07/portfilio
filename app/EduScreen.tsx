@@ -10,20 +10,14 @@ import 'swiper/css/navigation';
 
 import { Mousewheel, Pagination, Autoplay } from 'swiper/modules';
 
-// Import Swiper styles
 import 'swiper/css';
-import { Button, Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
-
+import { Modal, ModalBody, ModalContent, ModalTrigger } from "@/components/ui/animated-modal";
+import WordPullUp from "@/components/magicui/word-pull-up";
+import { motion } from "framer-motion";
 
 
 const EduScreen = () => {
-  const [openModal, setOpenModal] = useState(false);
   const [openImg, setImg] = useState('');
-
-  const open = (img:any) => {
-    setImg(img)
-    setOpenModal(true)
-  }
 
   const eduList = [
     {id:1, dip:"B.Sc. (Botany)", university:"Taunggyi University", duration:"2014 - 2019", note: null, img:"/certificate.png" },
@@ -36,38 +30,8 @@ const EduScreen = () => {
   ]
 
 
-  const close = () => {
-    setOpenModal(false)
-  }
-  // const sliderRef = useRef<HTMLDivElement>(null);
+ 
 
-  // useEffect(() => {
-  //   const slider = sliderRef.current;
-  //   if (!slider) return;
-
-  //   const handleScroll = () => {
-  //     const cards = slider.querySelectorAll<HTMLDivElement>(".card");
-  //     const sliderRect = slider.getBoundingClientRect();
-      
-  //     cards.forEach((card, index) => {
-  //       const cardRect = card.getBoundingClientRect();
-  //       const isVisible = cardRect.top >= sliderRect.top && cardRect.bottom <= sliderRect.bottom;
-        
-  //       if (isVisible) {
-  //         card.classList.add("visible");
-  //       } else {
-  //         card.classList.remove("visible");
-  //       }
-  //     });
-  //   };
-
-  //   slider.addEventListener("scroll", handleScroll);
-  //   handleScroll(); 
-
-  //   return () => {
-  //     slider.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   return (
     <>
@@ -78,9 +42,10 @@ const EduScreen = () => {
       
       </div>
       <div className=" col-span-3">
-      <h2 className="text-white text-4xl mt-20 mb-12 font-bold drop-shadow-lg">
-          Accomplished Academic Achievements
-        </h2>
+        <WordPullUp
+              className=" uppercase text-4xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
+              words="Accomplished Academic Achievements"
+            />
       <Swiper
         direction={'vertical'}
         slidesPerView={1}
@@ -89,15 +54,14 @@ const EduScreen = () => {
         pagination={{
           clickable: true,
         }}
-        autoplay={true}
-        modules={[ Pagination, Mousewheel, Autoplay]}
+        modules={[ Pagination, Mousewheel]}
         className="mySwiper h-screen"
       >
         {
           eduList?.map((edu, index) => (
                <SwiperSlide key={index}>
                 <div className=" grid grid-cols-4 gap-2">
-                <div className="col-span-1 flex justify-center relative">
+                {/* <div className="col-span-1 flex justify-center relative">
       
                   <div className="relative flex flex-col items-center">
                     <div className="w-px h-full border-r-2 border-dotted"></div>
@@ -108,8 +72,8 @@ const EduScreen = () => {
                       {index + 1}
                     </div>
                   </div>
-                </div>
-                  <div className=" col-span-3 drop-shadow-2xl shadow-2xl glassmorphism mx-2 py-3 px-4 rounded-md text-white opacity-95 transition-opacity duration-500">
+                </div> */}
+                  <div className=" col-span-4 drop-shadow-2xl shadow-2xl bg-slate-400 bg-opacity-30 backdrop-blur-md ml-20 mr-10 py-3 px-4 rounded-lg text-white opacity-95 transition-opacity duration-500">
                   <p className="text-2xl font-bold mt-4 mb-5">{ edu.dip }</p>
                     <div className="flex flex-row text-lg font-semibold px-2 my-2">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5 mr-6">
@@ -137,11 +101,15 @@ const EduScreen = () => {
                     }
                     
                     <div className="flex ml-6 my-4">
-                      <button type="button"
-                              onClick={() => open(edu.img)}>
-                      <Image src={edu.img} width={100} height={100} alt="certificate" className="rounded-md drop-shadow-md" />
-                      </button>
-                      
+                    <Modal>
+                      <ModalTrigger>
+                        <Image onClick={() => setImg(edu.img)} src={edu.img} width={100} height={100} alt="certificate" className="rounded-md drop-shadow-md" />
+                      </ModalTrigger>
+                      <ModalBody>
+                          <Image src={openImg} width={900} height={900} alt="certificate" className="rounded-md drop-shadow-md" />
+                      </ModalBody>
+                    </Modal>
+                    
                     </div>
                   </div>
                 </div>
@@ -153,19 +121,8 @@ const EduScreen = () => {
        
       </Swiper>
 
-      <Dialog as="div" open={openModal} onClose={close}
-              className="relative z-10 focus:outline-none">
-          <div className=" fixed inset-0 z-10 w-screen overflow-y-hidden">
-            <div className=" flex min-h-full items-center justify-center p-4">
-            <DialogPanel
-              transition
-              className="w-full max-w-md rounded-xl bg-white/5 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-            >
-              <Image src={openImg} width={900} height={900} alt="certificate" className="rounded-md drop-shadow-md" />
-              </DialogPanel>
-            </div>
-          </div>
-      </Dialog>
+      
+     
       </div>
 </div>
 

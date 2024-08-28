@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import Particles from "./components/utility/particles";
 
 const World = dynamic(() => import("../components/ui/globe").then((m) => m.World), {
   ssr: false,
@@ -411,16 +412,17 @@ export function GlobeScreen() {
           }}
           className="div"
         >
-           <h2 className="text-center text-xl md:text-4xl font-bold text-white">
+       
+           {/* <h2 className="text-center text-xl md:text-4xl font-bold text-white">
            Driven Professional Seeking Challenging Opportunities in a Dynamic Environment
           </h2>
           <p className="text-base md:text-lg font-normal text-neutral-200 mt-4 text-justify mx-auto px-20">
           I am eager to leverage my strong work ethic, education, and expertise in a role that challenges me and aligns with my passion for growth.
           Committed to achieving excellence and contributing to team success, I thrive in diverse settings where I can apply my skills, pursue personal development, and drive meaningful results for the company.
-          </p>
+          </p> */}
         </motion.div>
         <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent z-40" />
-        <div className="absolute w-full -bottom-32 h-72 md:h-full z-10">
+        <div className="absolute w-full h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>

@@ -15,6 +15,7 @@ import AwardedScreen from "./AwardedScreen";
 import { ProjectScreen } from "./ProjectScreen";
 import { GlobeScreen } from './GlobeScreen';
 import { TimelineScreen } from './TimelineScreen';
+import FreightDoc from "./FreightDoc";
 
 
 
@@ -45,7 +46,7 @@ export default function Home() {
                 layers={[
                     {image: './bg.png', speed: -20},
                 ]}
-                style={{  height: '100vh',
+                style={{  height: 'auto',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center', }}>
                 
@@ -55,16 +56,17 @@ export default function Home() {
             
             </ParallaxBanner>
 
-            <div className=" bg-black" style={{ height:'120vh'}}>
-            {/* <div className=" absolute w-11/12 h-full ml-12  drop-shadow-lg  justify-center items-center shadow-lg bg-white opacity-10 backdrop-blur-sm"></div> */}
+            <div className=" bg-black" style={{ height:'auto'}}>
               <Particles className=" w-full h-full absolute pointer-events-none" quantity={50} />
                 <div className=" z-40">
                         <WhoAmIScreen/>
+                        <GlobeScreen/>
+                        <AboutMeScreen/>
                 </div>
             </div>
 
         
-              <div className="relative">
+              {/* <div className="relative">
                  
                   <ParallaxBanner
                     layers={[
@@ -76,48 +78,38 @@ export default function Home() {
                           </div>
                         ),
                       },
-                      // {
-                      //   speed: -15,
-                      //   children: (
-                      //     <div className=" absolute inset-0 flex flex-col items-center">
-                      //       <h1 className="  text-white text-4xl font-bold drop-shadow-lg text-center w-10/12"> 
-                      //       Driven Professional Seeking Challenging Opportunities in a Dynamic Environment 
-                      //       </h1>
-                      //       <div className=" text-white mt-5 mx-10 text-justify w-10/12 px-2 py-3 drop-shadow-2xl backdrop-blur-xl">
-                      //       I am eager to leverage my strong work ethic, education, and expertise in a role that challenges me and aligns with my passion for growth.
-                      //       Committed to achieving excellence and contributing to team success, I thrive in diverse settings where I can apply my skills, pursue personal development, and drive meaningful results for the company.
-                      //       </div>
-                      //     </div>
-                      //   )
-                      // },
-                      { speed: -5,
+                      {
+                        speed: -15,
                         children: (
-                          <div>
-                            <GlobeScreen/>
+                          <div className=" absolute inset-0 flex flex-col items-center">
+                            <h1 className="  text-white text-4xl font-bold drop-shadow-lg text-center w-10/12"> 
+                            Driven Professional Seeking Challenging Opportunities in a Dynamic Environment 
+                            </h1>
+                            <div className=" text-white mt-5 mx-10 text-justify w-10/12 px-2 py-3 drop-shadow-2xl backdrop-blur-xl">
+                            I am eager to leverage my strong work ethic, education, and expertise in a role that challenges me and aligns with my passion for growth.
+                            Committed to achieving excellence and contributing to team success, I thrive in diverse settings where I can apply my skills, pursue personal development, and drive meaningful results for the company.
+                            </div>
                           </div>
-                          
-                        ),
-                      }
+                        )
+                      },
+                     
                     ]}
 
                       className="aspect-[2/1]"
                     >
 
                     </ParallaxBanner>
-              </div>
-             
-
-
-            <div className=" bg-black relative" style={{ height: '100vh'}}>
-                {/* <div className=" absolute inset-0 w-full mx-auto bg-gradient-to-bl from-transparent via-transparent to-black"></div> */}
-                {/* <div className=" absolute w-11/12 h-full ml-12  drop-shadow-lg  justify-center items-center shadow-lg bg-white opacity-10 backdrop-blur-sm"></div> */}
+              </div> */}
+            
+            <div className=" bg-black" style={{ height: 'auto'}}>
                 <EduScreen/>
-            </div>
-            <div className=" bg-black" style={{ height: '100vh'}}>
-            {/* <div className=" absolute w-11/12 h-full ml-12  drop-shadow-lg  justify-center items-center shadow-lg bg-white opacity-10 backdrop-blur-sm"></div> */}
                 <LanguageScreen/>
+                <AwardedScreen/>
+                {/* <ExperienceScreen/> */}
+                <TimelineScreen/>
+                {/* <FreightDoc/> */}
             </div>
-            <div className="bg-black" style={{ height:'auto'}}>
+            {/* <div className="bg-black" style={{ height:'auto'}}>
                 <ParallaxBanner
                       layers={[
                         {
@@ -141,7 +133,7 @@ export default function Home() {
                           children:(
                             <div
                               className="relative w-full h-full flex items-end justify-center">
-                                {/* <img src="./juju.png" alt="" className=" w-full"/> */}
+                                
                             </div>
                           )
                         }
@@ -151,16 +143,8 @@ export default function Home() {
                       </ParallaxBanner>
                 
                    
-            </div>
-            <div className="bg-black" style={{ height:'auto'}}>
-            
-                <ExperienceScreen/>
-               
-            </div>
-            <div className="bg-black">
-            
-            <TimelineScreen/>
-            </div>
+            </div> */}
+          
         </main>
         
 

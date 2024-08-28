@@ -84,7 +84,7 @@ export function TimelineScreen() {
     },
   ];
   return (
-    <div className="w-full pb-40">
+    <div className="w-full pb-40 pt-10">
       <Timeline data={data} />
     </div>
   );
