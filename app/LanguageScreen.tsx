@@ -8,9 +8,9 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 const LanguageScreen:React.FC = () => {
     const languages = [
         {name: "English", percentage: 95},
-        {name: "Deutsh", percentage: 85},
-        {name: "Burmese", percentage: 95},
-        {name: "Nepalese", percentage: 90},
+        {name: "Deutsch", percentage: 75},
+        {name: "Burmese", percentage: 100},
+        {name: "Nepalese", percentage: 95},
         {name: "Hindi", percentage: 85},
     ];
     return(

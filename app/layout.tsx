@@ -8,8 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "KumariKadial | Business Development",
-  //title: "Loream",
-  description: "Business Development",
+  description: "I am a person who is Guided by solutions, powered by results, and always elevating through learning and new challenging opportunities.",
 };
 
 export default function RootLayout({

@@ -5,7 +5,9 @@ import {
   useTransform,
   motion,
 } from "framer-motion";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
+import WordPullUp from "../magicui/word-pull-up";
 
 interface TimelineEntry {
   title: string;
@@ -38,17 +40,21 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-black text-white  md:px-10"
       ref={containerRef}
     >
+       <Image src='/success.png' width={100} height={100} alt="edu" className= " mx-auto flex" />
+
       <div className="max-w-7xl mx-auto py-4 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-20  max-w-4xl font-bold">
-          DISTINGUISHED PROFESSIONAL JOURNEY
-        </h2>
+      <WordPullUp
+              className=" uppercase text-4xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
+              words="DISTINGUISHED PROFESSIONAL JOURNEY"
+            />
+      
         {/* <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
           I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
           a timeline of my journey.
         </p> */}
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 bg-black text-white">
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 pt-10 bg-black text-white">
         {data.map((item, index) => (
           <div key={index} className="relative flex w-full pt-10 md:pt-40 pb-5">
           {/* Content Box */}

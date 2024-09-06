@@ -396,9 +396,9 @@ export function GlobeScreen() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center py-20 h-screen md:h-auto bg-black relative w-full">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
-        <motion.div
+    <div className="flex flex-row items-center justify-center pb-20 h-screen md:h-auto bg-black relative w-full">
+      <div className="max-w-7xl mx-auto w-full relative -mt-10 overflow-hidden h-full md:h-[40rem] px-4">
+        {/* <motion.div
           initial={{
             opacity: 0,
             y: 20,
@@ -413,16 +413,16 @@ export function GlobeScreen() {
           className="div"
         >
        
-           {/* <h2 className="text-center text-xl md:text-4xl font-bold text-white">
+           <h2 className="text-center text-xl md:text-4xl font-bold text-white">
            Driven Professional Seeking Challenging Opportunities in a Dynamic Environment
           </h2>
           <p className="text-base md:text-lg font-normal text-neutral-200 mt-4 text-justify mx-auto px-20">
           I am eager to leverage my strong work ethic, education, and expertise in a role that challenges me and aligns with my passion for growth.
           Committed to achieving excellence and contributing to team success, I thrive in diverse settings where I can apply my skills, pursue personal development, and drive meaningful results for the company.
-          </p> */}
-        </motion.div>
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent z-40" />
-        <div className="absolute w-full h-72 md:h-full z-10">
+          </p>
+        </motion.div> */}
+        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent" />
+        <div className="absolute w-full h-72 md:h-full">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>
       </div>

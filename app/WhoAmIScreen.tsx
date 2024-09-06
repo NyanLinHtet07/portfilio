@@ -43,11 +43,9 @@ const WhoAmIScreen = () => {
     // });
 
     return(
-        <div className=" py-20">
+        <div className=" pt-20">
              
-            {/* <div ref={parallax.ref} className="parallax-text text-center mb-10 drop-shadow-xl"> 
-                WHO AM I 
-            </div> */}
+          
             <WordPullUp
               className="text-4xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
               words="WHO AM I"

@@ -1,23 +1,27 @@
 "use client";
-
-import dynamic from "next/dynamic";
-import React from "react";
+import React, { useState, useRef } from "react";
 
 
-const PdfViewer = dynamic(() => import('./../components/ui/pdf-viewer'), {
-    ssr: false,
-})
 
 const FreightDoc = () => {
+
+   
+
     return (
-        <>
+        <div className=" bg-black py-36">
         <div className=" text-white text-4xl uppercase">
-            I Made It
+            I Made It ...
         </div>
-        <div>
-            <PdfViewer file="/Freight.pdf" />
+      
+        <div className=" absolute items-center justify-center mx-32 rounded-lg bg-black">
+                <iframe
+                    src="/Freight.pdf"
+                    className=" bg-black"
+                ></iframe>
+               
+        
         </div>
-        </>
+        </div>
     )
 }
 

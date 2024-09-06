@@ -40,7 +40,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({ texts, speed = 100, delayBe
   return (
     <div className="text-xl text-white mt-4 drop-shadow-lg text-center">
       {displayedText.map((line, index) => (
-        <div key={index} className="mb-4">
+        <div key={index} className="mb-1">
           {line} <span className="border-r-2 ml-1 border-slate-100 animate-pulse"></span>
         </div>
       ))}

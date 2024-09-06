@@ -13,8 +13,8 @@ import {
   IconBrandWhatsapp,
   IconBrandGmail,
   IconPhoneCall,
-  IconMail
-
+  IconMail,
+  IconPhoneCalling
 } from "@tabler/icons-react";
 
 export default function CoverScreen(){
@@ -24,29 +24,37 @@ export default function CoverScreen(){
       icon: (
         <IconPhoneCall className="h-full w-full text-blue-950"/>
       ),
-      href:"#"
-    },
-    {
-      title: "Whatsapp",
-      icon: (
-        <IconBrandWhatsapp className="h-full w-full text-blue-950"/>
-      ),
-      href:"#"
-    },
-    {
-      title: "LinkedIn",
-      icon: (
-        <IconBrandLinkedin className="h-full w-full text-blue-950"/>
-      ),
-      href:"#"
+      href:"tel:+959769586670"
     },
     {
       title: "Email",
       icon: (
         <IconMail className="h-full w-full text-blue-950"/>
       ),
-      href:"#"
+      href:"mailto:kumarikdl9@gmail.com"
     },
+    {
+      title: "Whatsapp",
+      icon: (
+        <IconBrandWhatsapp className="h-full w-full text-blue-950"/>
+      ),
+      href:"https://wa.me/959769586670"
+    },
+    {
+      title: "Viber",
+      icon: (
+        <IconPhoneCalling className="h-full w-full text-blue-950"/>
+      ),
+      href: "viber://chat?number=959769586670"
+    },
+    {
+      title: "LinkedIn",
+      icon: (
+        <IconBrandLinkedin className="h-full w-full text-blue-950"/>
+      ),
+      href:"https://www.linkedin.com/in/kumari-kadial-juju-9a044818b"
+    },
+    
   
     
   ]
@@ -64,16 +72,24 @@ export default function CoverScreen(){
         
       
         <div className=" relative">
+          <div className=" relative mt-24 w-60 h-60 mx-auto">
+          <Image src='/front.png' alt="profile" 
+                      width={220} height={220} 
+                      className="object-cover drop-shadow-md px-4 py-4 rounded-full"/>
+           <Image src='/curveDesign1.png' 
+                      width={240} height={220} alt="curve" 
+                      className=" absolute -top-5 right-4 object-cover drop-shadow-2xl filter-white" />
+          </div>
             
-            <Parallax scale={[0.5,1.5]}  speed={10}  className=" relative mt-24 w-60 h-60 mx-auto">
-              <Image src='/profile.png' alt="profile" 
-                      width={200} height={200} 
+            {/* <Parallax scale={[0.5,1.5]}  speed={10}  className=" relative mt-24 w-60 h-60 mx-auto">
+              <Image src='/front.png' alt="profile" 
+                      width={220} height={220} 
                       className="object-cover drop-shadow-md px-4 py-4 rounded-full"/>
 
               <Image src='/curveDesign1.png' 
                       width={240} height={220} alt="curve" 
                       className=" absolute -top-5 right-4 object-cover drop-shadow-2xl filter-white" />
-            </Parallax>
+            </Parallax> */}
 
             {/* <div className=" relative mt-24 w-60 h-60 mx-auto">
                  <Image src='/profile.png' alt="profile" 
@@ -89,10 +105,12 @@ export default function CoverScreen(){
               className="text-2xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
               words="Kumari Kadial @ JuJu"
             />
-            
-            {/* <div ref={parallax.ref} className="parallax-text text-center mb-10">
-                Kumari Kadial @ JuJu
-            </div> */}
+
+            <div className=" text-white text-xs  text-center px-20 pb-5 -mt-3 drop-shadow-xl uppercase">
+              I am a person who is Guided by solutions, powered by results, <br/> and always elevating through learning 
+              and new challenging opportunities.
+            </div>
+
 
             <TypingEffect texts={[
                     "Senior Business Development Executive",
@@ -101,12 +119,16 @@ export default function CoverScreen(){
                   speed={100}
                   delayBetweenLines = {1000} />
 
-            <div className=" flex mt-10 justify-center h-[35rem] w-full">
+           
+
+            <div className=" flex mt-5 justify-center h-[35rem] w-full">
                 <FloatingDock
                   mobileClassName="translate-y-20"
                   items={links}
                 />
             </div>
+
+       
         </div>
     )
 }
