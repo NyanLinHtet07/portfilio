@@ -129,9 +129,9 @@ const EduScreen = () => {
       </div>
   </div>
 
-  <div className=" grid grid-cols-5 gap-4 w-full">
+  {/* <div className=" grid grid-cols-5 gap-4 w-full">
       <div className=" col-span-2 mx-auto">
-      {/* <Image src='/edu.png' width={350} height={700} alt="edu" className="" /> */}
+      <Image src='/edu.png' width={350} height={700} alt="edu" className="" />
       
       </div>
       <div className=" col-span-3">
@@ -173,7 +173,7 @@ const EduScreen = () => {
       </Dialog>
      
       </div>
-</div>
+</div> */}
 
 
 
