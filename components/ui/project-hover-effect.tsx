@@ -2,7 +2,9 @@ import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
+import { Viewer, Worker, ScrollMode } from '@react-pdf-viewer/core';
+import '@react-pdf-viewer/core/lib/styles/index.css';
 
 
 
@@ -91,11 +93,17 @@ export const ProjectHoverEffect = ({
                   </p>
                   </>
                 ) : (
-                  <iframe src={item.pdf} 
-                    className="w-full h-96 p-2 border border-gray-300 rounded-lg"
-                    frameBorder={0}
-                    allowFullScreen
-                    />
+                  // <iframe src={item.pdf} 
+                  //   className="w-full h-96 p-2 border border-gray-300 rounded-lg"
+                  //   frameBorder={0}
+                  //   allowFullScreen
+                  //   />
+                  <div style={{ height: '550px' }}>
+                    <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
+                      <Viewer fileUrl="/Freight.pdf" scrollMode={ScrollMode.Vertical}/>
+                    </Worker>
+                  </div>
+                 
                 )}
             
             </DialogPanel>

@@ -46,10 +46,13 @@ const WhoAmIScreen = () => {
         <div className=" pt-20">
              
           
-            <WordPullUp
+            {/* <WordPullUp
               className="text-4xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
               words="WHO AM I"
-            />
+            /> */}
+            <h2 className="text-white uppercase text-4xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
+               WHO AM I
+            </h2>
             <div className=" mt-4 text-left w-10/12 mx-auto">
               <TextGenerateEffect words={words} />
             {/* <TypingPageEffect texts={[

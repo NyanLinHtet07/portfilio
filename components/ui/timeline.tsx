@@ -43,15 +43,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
        <Image src='/success.png' width={100} height={100} alt="edu" className= " mx-auto flex" />
 
       <div className="max-w-7xl mx-auto py-4 px-4 md:px-8 lg:px-10">
-      <WordPullUp
+      {/* <WordPullUp
               className=" uppercase text-4xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
               words="DISTINGUISHED PROFESSIONAL JOURNEY"
-            />
+            /> */}
       
-        {/* <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm">
-          I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s
-          a timeline of my journey.
-        </p> */}
+      <h2 className="text-white uppercase text-4xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
+      DISTINGUISHED PROFESSIONAL JOURNEY
+            </h2>
       </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20 pt-10 bg-black text-white">
@@ -66,7 +65,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             }`}
             style={{ width: "calc(50% - 20px)" }}
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">{item.title}</h3>
+            <h3 className="text-xl md:text-2xl font-bold mb-6">{item.title}</h3>
             <div>{item.content}</div>
           </div>
 

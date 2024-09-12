@@ -8,10 +8,10 @@ export function TimelineScreen() {
       title: "December 2019 - October 2020",
       content: (
         <div className="pb-10">
-          <p className="text-neutral-200 text-xl md:text-3xl font-bold mb-6">
+          <p className="text-neutral-200 text-lg md:text-xl font-bold mb-6">
             Airline Ticketing Specialist
           </p>
-          <p className="text-neutral-200 text-2xl font-semibold ml-4">
+          <p className="text-neutral-200 text-lg md:text-xl font-semibold">
             Owaay Travel Myanmar
           </p>
           
@@ -24,10 +24,10 @@ export function TimelineScreen() {
       title: "October 2020 - January 2021",
       content: (
         <div className="pb-10">
-          <p className="text-neutral-200 text-xl md:text-3xl font-bold mb-6">
+          <p className="text-neutral-200 text-lg md:text-xl font-bold mb-6">
             Business Development Internship
           </p>
-          <p className="text-neutral-200 text-2xl font-semibold ml-4">
+          <p className="text-neutral-200 md:text-xl text-lg font-semibold ml-4">
             Global Green Future Co., Ltd
           </p>
          
@@ -39,10 +39,10 @@ export function TimelineScreen() {
       title: "January 2021 - June 2022",
       content: ( 
         <div className="pb-10">
-          <p className="text-neutral-200 text-xl md:text-3xl font-bold mb-6">
+          <p className="text-neutral-200 text-lg md:text-xl font-bold mb-6">
             Procurement Associate
           </p>
-          <p className="text-neutral-200 text-2xl font-semibold ml-4">
+          <p className="text-neutral-200 md:text-xl text-lg font-semibold ">
             Nordic Group Limited
           </p>
          
@@ -55,10 +55,10 @@ export function TimelineScreen() {
       title: "July 2022 - July 2023",
       content: (
         <div className="pb-10">
-          <p className="text-neutral-200 text-xl md:text-3xl font-bold mb-6">
+          <p className="text-neutral-200 text-lg md:text-xl font-bold mb-6">
             Business Development Executive
           </p>
-          <p className="text-neutral-200 text-2xl font-semibold ml-4">
+          <p className="text-neutral-200 text-lg md:text-xl font-semibold">
             Nordic Group Limited
           </p>
          
@@ -71,10 +71,10 @@ export function TimelineScreen() {
       title: "August 2023 - May 2024",
       content: (
         <div className="pb-10">
-          <p className="text-neutral-200 text-xl md:text-3xl font-bold mb-6">
+          <p className="text-neutral-200 text-lg md:text-xl font-bold mb-6">
             Senior Business Development Executive
           </p>
-          <p className="text-neutral-200 text-2xl font-semibold ml-4">
+          <p className="text-neutral-200 text-lg md:text-xl font-semibold">
             Nordic Group Limited
           </p>
          

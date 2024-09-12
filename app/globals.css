@@ -66,4 +66,27 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .perspective {
+    perspective: 1800px;
+    perspective-origin: left;
+  }
+  
+  .page {
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 1s ease;
+  }
+  
+  .page.turn {
+    transform: rotateY(-180deg); /* When flipped, rotate the page */
+  }
+  
+  .front, .back {
+    backface-visibility: hidden; /* Ensure the back face is hidden */
+  }
+  
+  .back {
+    transform: rotateY(-180deg); /* Hide the back page initially by rotating */
+  }
 }

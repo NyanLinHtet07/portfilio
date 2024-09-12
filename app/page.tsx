@@ -76,7 +76,7 @@ export default function Home() {
                 {/* <ExperienceScreen/> */}
                 <TimelineScreen/>
                 <ProjectDataScreen/>
-                <FreightDoc/>
+                {/* <FreightDoc/> */}
             </div>
           
           

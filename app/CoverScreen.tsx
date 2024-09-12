@@ -14,60 +14,99 @@ import {
   IconBrandGmail,
   IconPhoneCall,
   IconMail,
-  IconPhoneCalling
+  IconPhone
 } from "@tabler/icons-react";
+import { color } from "framer-motion";
 
 export default function CoverScreen(){
+  // const links = [
+  //   {
+  //     title: "Phone",
+  //     icon: (
+  //       <IconPhoneCall fill="#34564F" className="h-full w-full text-white"/>
+  //     ),
+  //     href:"tel:+959769586670"
+  //   },
+  //   {
+  //     title: "Email",
+  //     icon: (
+  //       <IconMail fill="#002E4F" className="h-full w-full text-white"/>
+  //     ),
+  //     href:"mailto:kumarikdl9@gmail.com"
+  //   },
+  //   {
+  //     title: "Whatsapp",
+  //     icon: (
+  //       <IconBrandWhatsapp fill="#25D366" className="h-full w-full text-white"/>
+  //     ),
+  //     href:"https://wa.me/959769586670"
+  //   },
+  //   {
+  //     title: "Viber",
+  //     icon: (
+  //       <IconPhone fill="#7360f2" className="h-full w-full text-white"/>
+  //     ),
+  //     href: "viber://chat?number=959769586670"
+  //   },
+  //   {
+  //     title: "LinkedIn",
+  //     icon: (
+  //       <IconBrandLinkedin fill=" #0077B5" className="h-full w-full text-white"/>
+  //     ),
+  //     href:"https://www.linkedin.com/in/kumari-kadial-juju-9a044818b"
+  //   },
+    
+  
+    
+  // ]
+
   const links = [
     {
       title: "Phone",
       icon: (
-        <IconPhoneCall className="h-full w-full text-blue-950"/>
+        <IconPhoneCall className="h-full w-full text-blue-950 hover:text-white"/>
       ),
-      href:"tel:+959769586670"
+      href:"tel:+959769586670",
+      bgColor: "#6FBEFF"
     },
     {
       title: "Email",
       icon: (
-        <IconMail className="h-full w-full text-blue-950"/>
+        <IconMail className="h-full w-full text-blue-950 hover:text-white"/>
       ),
-      href:"mailto:kumarikdl9@gmail.com"
+      href:"mailto:kumarikdl9@gmail.com",
+      bgColor: "#002E4F",
     },
     {
       title: "Whatsapp",
       icon: (
-        <IconBrandWhatsapp className="h-full w-full text-blue-950"/>
+        <IconBrandWhatsapp className="h-full w-full text-blue-950 hover:text-white"/>
       ),
-      href:"https://wa.me/959769586670"
+      href:"https://wa.me/959769586670",
+      bgColor: "#25D366"
     },
     {
       title: "Viber",
       icon: (
-        <IconPhoneCalling className="h-full w-full text-blue-950"/>
+        <IconPhone className=" w-full h-full text-blue-950 hover:text-white "/>
       ),
-      href: "viber://chat?number=959769586670"
+      href: "viber://chat?number=959769586670",
+      bgColor:"#7360f2"
+      
     },
     {
       title: "LinkedIn",
       icon: (
-        <IconBrandLinkedin className="h-full w-full text-blue-950"/>
+        <IconBrandLinkedin className="h-full w-full text-blue-950 hover:text-white"/>
       ),
-      href:"https://www.linkedin.com/in/kumari-kadial-juju-9a044818b"
+      href:"https://www.linkedin.com/in/kumari-kadial-juju-9a044818b",
+      bgColor: "#0077B5"
     },
     
   
     
   ]
-    // const parallax = useParallax<HTMLDivElement>({
-    //     onProgressChange: (progress) => {
-    //       if (parallax.ref.current) {
-    //         parallax.ref.current.style.setProperty(
-    //           '--progress',
-    //           progress.toString()
-    //         );
-    //       }
-    //     },
-    //   });
+
     return (
         
       

@@ -12,19 +12,45 @@ import 'swiper/css/effect-cards';
 import { EffectCards } from "swiper/modules";
 
 import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
-import { Modal, ModalBody, ModalContent, ModalTrigger } from "@/components/ui/animated-modal";
 import WordPullUp from "@/components/magicui/word-pull-up";
 import { IconBuildingBank, IconClock, IconAward } from "@tabler/icons-react";
 
-import HtmlFlipBook from "react-pageflip"
 
+import HTMLFlipBook from "react-pageflip";
 
+interface bookItem {
+  id: number,
+  dip: string,
+  university: string,
+  duration: string,
+  note: null | string,
+  img: string
+}
 
 const EduScreen = () => {
   const [openImg, setImg] = useState('');
   let [isOpen, setIsOpen] = useState(false);
   let [item, setItem] = useState('');
-  const [flipped, setFlipped] = useState(false);
+  
+  let [bookItemData, setBookItem] = useState<bookItem | null>(null);
+  let [flippedPages, setFlippedPages] = useState<number[]>([]);
+  let [isBookOpen, setBookOpen] = useState(false);
+
+  const togglePageFlip = (pageIndex: number) => {
+    setFlippedPages((prevFlipped) => 
+        prevFlipped.includes(pageIndex)
+          ? prevFlipped.filter((index) => index !== pageIndex)
+          : [...prevFlipped, pageIndex]
+  )}
+
+  function openBook(item: bookItem){
+    setBookOpen(true);
+    setBookItem(item);
+  }
+
+  function closeBook(){
+    setBookOpen(false)
+  }
 
   function open(item:any){
     setIsOpen(true);
@@ -35,9 +61,9 @@ const EduScreen = () => {
     setIsOpen(false);
   }
 
-  const handleFlip = () => {
-    setFlipped(! flipped)
-  }
+  const isPageFlipped = (pageIndex: number) => flippedPages.includes(pageIndex);
+
+
 
   const eduList = [
     {id:1, dip:"Bachelor of Science ~ B.Sc.(Botany)", university:"Taunggyi University", duration:"2014 - 2019", note: null, img:"/certificate.png" },
@@ -53,10 +79,13 @@ const EduScreen = () => {
     <>
   <div>
   <Image src='/book.png' width={100} height={100} alt="edu" className=" flex mx-auto mb-5" />
-  <WordPullUp
+  {/* <WordPullUp
               className=" uppercase text-4xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
               words="Accomplished Academic Achievements"
-            />
+            /> */}
+  <h2 className="text-white uppercase text-4xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
+  Accomplished Academic Achievements
+                 </h2>
 
           
   <div className=" grid grid-cols-5 gap-4 max-w-5xl">
@@ -75,7 +104,7 @@ const EduScreen = () => {
         {
           eduList?.map((edu, index) => (
                <SwiperSlide key={index}>
-                <div className="mt-20 ml-10">
+                <div className=" mt-32 ml-10">
                   <div className=" drop-shadow-lg bg-slate-300 backdrop-blur-md  py-3 px-4 h-96 w-80 rounded-xl text-slate-900 transition-opacity duration-500 flex flex-col">
                   <p className="text-2xl font-semibold mt-4 mb-5">{ edu.dip }</p>
                   
@@ -129,51 +158,110 @@ const EduScreen = () => {
       </div>
   </div>
 
-  {/* <div className=" grid grid-cols-5 gap-4 w-full">
+  <div className=" grid grid-cols-5 gap-4 w-full">
       <div className=" col-span-2 mx-auto">
       <Image src='/edu.png' width={350} height={700} alt="edu" className="" />
       
       </div>
       <div className=" col-span-3">
        
-      <div className=" grid grid-cols-3 gap-3">
+      <div className=" grid grid-cols-3 gap-3 mt-20">
         {
           eduList?.map((edu, index) => (
-             
-         
-            <div className="drop-shadow-2xl bg-slate-300 backdrop-blur-md py-3 px-4 w-52 h-60 rounded-r-xl rounded-l-sm border-r-4 border-l-2 border-white text-slate-900 transition-opacity duration-500 flex flex-col justify-between">
-             <Image src="/graduation.png" alt="Book Cover" width={50} height={50} className=" flex mx-auto" />
-            <p className="text-lg font-bold ">{edu.dip}</p>
-  
-            <Button onClick={() =>handleFlip}
-              className="rounded-2xl flex mx-auto bg-slate-800 py-1 px-3 text-sm font-medium text-white focus:outline-none hover:text-black data-[hover]:bg-white/70 data-[focus]:outline-1 data-[focus]:outline-white"
-            >
-              Details
-            </Button>
-          </div>
+    
+              <div className="flex flex-col justify-between p-2 my-1 rounded-r-xl border-r-4 border-slate-100 bg-slate-900 text-white w-60 h-80"
+                    key={index}
+                    onClick={() => openBook(edu)}>
+                        <Image 
+                          src="/diploma.png" 
+                          alt="Book Cover" 
+                          width={60} 
+                          height={60} 
+                          className="flex mx-auto mt-6" 
+                        />
+                        <p className="tracking-tight font-semibold text-2xl drop-shadow-xl">{edu.dip}</p>
+                    
+                        <div
+                          className="w-full rounded-lg text-center mx-auto bg-slate-950 py-1 px-3 text-sm font-medium text-slate-100 focus:outline-none hover:text-black data-[hover]:bg-white/70 data-[focus]:outline-1 data-[focus]:outline-white"
+                        >
+              Detail
+            </div>
+            </div>
 
           ))
         }
+        
        
       </div>
 
-      <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none " onClose={close}>
-        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4">
-            <DialogPanel
-              transition
-              className="w-full max-w-xl ring-2 ring-white rounded-xl bg-white/10  backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
-            >
+      <Dialog open={isBookOpen} as="div" className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClose={close}>
+      <div className="fixed inset-0 z-10 overflow-y-auto" onClick={closeBook} /> {/* This div captures clicks to close the modal */}
+        
+        <DialogPanel className="flex items-center justify-center min-h-screen p-4">
+          {/* Page 1 */}
+          <div
+            className={`page absolute flex origin-left w-80 h-2/3 transform mx-auto ${
+              isPageFlipped(1) ? 'turn z-10' : 'z-20'
+            }`} // z-20 when not flipped, z-10 when flipped
+            onClick={() => togglePageFlip(1)}
+          >
+            <div className={`front flex flex-col justify-between p-2 my-1 rounded-r-xl border-r-4 border-slate-100 bg-slate-900 text-white  h-full absolute right-0 w-full ${isPageFlipped(1) ? 'border-l-4 border-white rounded-l-xl' : 'border-r-4 border-white rounded-r-xl'}`}>
+           
+                        <Image 
+                          src="/diploma.png" 
+                          alt="Book Cover" 
+                          width={70} 
+                          height={70} 
+                          className="flex mx-auto mt-6" 
+                        />
+                        <p className="tracking-tight font-semibold text-3xl drop-shadow-xl">{bookItemData?.dip}</p>
+                    
+                        <div
+                          className="w-full rounded-lg text-center mx-auto bg-slate-950 py-4 px-3 text-sm font-medium text-slate-100 focus:outline-none hover:text-black data-[hover]:bg-white/70 data-[focus]:outline-1 data-[focus]:outline-white"
+                        >
+              
+            </div>
+            </div>
             
-              <Image src={item} width={800} height={600} alt={""} />
-            
-            </DialogPanel>
+            <div className={`back font-bold flex flex-col items-start justify-center px-2  bg-gray-800 text-slate-200 h-full absolute w-full ${isPageFlipped(1) ? 'border-l-4 border-white rounded-l-xl' : 'border-r-4 border-white rounded-r-xl'}`}>
+                  <div className="flex items-start">
+                     <IconBuildingBank className="mr-2 "/>
+                      <p>{bookItemData?.university}</p>
+                    </div>
+                    <div className="flex  my-3">
+                      < IconClock className=" mr-2" />
+                      <p>{bookItemData?.duration}</p>
+                    </div>
+                    {
+                      bookItemData?.note && (
+                        <div className="flex my-3 ">
+                          <IconAward className="mr-2"/>
+                          <p>{bookItemData?.note}</p>
+                        </div>
+                      )}
+            </div>
           </div>
-        </div>
+
+          {/* Page 2 */}
+          <div
+            className={`page absolute flex origin-left w-80 h-2/3 transform ${
+              isPageFlipped(2) ? 'turn z-20' : 'z-10'
+            }`} // z-20 when flipped, z-10 when not flipped
+            onClick={() => togglePageFlip(2)}
+          >
+            <div className={`front text-xl sm:text-3xl md:text-5xl flex items-center justify-start p-3 font-bold bg-gray-900 h-full absolute right-0 w-full ${isPageFlipped(2) ? 'border-l-4 border-white rounded-l-xl' : 'border-r-2 border-white rounded-r-xl'}`}>
+            <Image  src={bookItemData?.img || "/certificate.png"} width={400} height={300} alt="certificate" className="rounded-md drop-shadow-md" />
+            </div>
+            <div className={`back text-xl sm:text-3xl md:text-5xl font-bold flex items-center justify-start px-2 sm:px-5 md:px-20 bg-gray-800 h-full absolute w-full ${isPageFlipped(2) ? 'border-l-4 border-white rounded-l-xl' : 'border-r-2 border-white rounded-r-xl'}`}>
+           
+            </div>
+          </div>
+        </DialogPanel>
+        
       </Dialog>
      
       </div>
-</div> */}
+</div>
 
 
 
