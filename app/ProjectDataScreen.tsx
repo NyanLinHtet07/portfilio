@@ -53,7 +53,7 @@ const ProjectDataScreen:React.FC = () => {
         {/* <div className=" bg-black">
         <iframe src='https://widgets.sociablekit.com/linkedin-recommendations/iframe/25460448' width='100%' height='1000' className=" bg-black"></iframe>
         </div> */}
-          <div className="recommendation-card max-w-2xl mt-20 mx-auto bg-slate-950 bg-opacity-45 rounded-xl shadow-md overflow-hidden md:max-w-4xl">
+          {/* <div className="recommendation-card max-w-2xl mt-20 mx-auto bg-slate-950 bg-opacity-45 rounded-xl shadow-md overflow-hidden md:max-w-4xl">
       <div className="md:flex">
         <div className="md:shrink-0">
           <img
@@ -87,7 +87,7 @@ With her dedication and hard work, our Freight Service monthly sales revenue inc
           </p>
         </div>
       </div>
-    </div>
+    </div> */}
 
      
 
