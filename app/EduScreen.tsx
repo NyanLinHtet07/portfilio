@@ -21,6 +21,7 @@ import HTMLFlipBook from "react-pageflip";
 interface bookItem {
   id: number,
   dip: string,
+  dipDetail:string,
   university: string,
   duration: string,
   note: null | string,
@@ -66,12 +67,12 @@ const EduScreen = () => {
 
 
   const eduList = [
-    {id:1, dip:"Bachelor of Science ~ B.Sc.(Botany)", university:"Taunggyi University", duration:"2014 - 2019", note: null, img:"/certificate.png" },
-    {id:2, dip:"Diploma ~ International Business Management (US, OSG)", university:"Mimber Institute of Management Study", duration:"2020 February - 2020 December", note: null, img:"/certificate.png" },
-    {id:3, dip:"Diploma ~ Logistics Materials and Supply Chain Management (UK, NCFE)", university:"Mimber Institute of Management Study", duration:"2022 June - 2022 October", note: "Distinction", img:"/certificate.png" },
-    {id:4, dip:"German Language Study A1, A2 & B1", university:"Gothe Institude", duration:"2022 December - 2024 Present", note: null, img:"/certificate.png" },
-    {id:5, dip:"Certificate ~ Cabin Crew Language and Operation", university:"Myanmar Flight Attendent School", duration:"2019", note: null, img:"/certificate.png" },
-    {id:6, dip:"Certificate ~ Airline Ticket Reversation", university:"Trust Vocational Institute", duration:"2019", note: null, img:"/certificate.png" },
+    {id:1, dip:"Bachelor of Science",dipDetail:"B.Sc.(Botany)" , university:"Taunggyi University", duration:"2014 - 2019", note: null, img:"/certificate.png" },
+    {id:2, dip:"Diploma In", dipDetail:"International Business Management (US, OSG)", university:"Mimber Institute of Management Study", duration:"2020 February - 2020 December", note: null, img:"/certificate.png" },
+    {id:3, dip:"Diploma In", dipDetail:"Logistics Materials and Supply Chain Management (UK, NCFE)", university:"Mimber Institute of Management Study", duration:"2022 June - 2022 October", note: "Distinction", img:"/certificate.png" },
+    {id:4, dip:"German Language Study", dipDetail:"A1, A2 & B1", university:"Gothe Institude", duration:"2022 December - 2024 Present", note: null, img:"/certificate.png" },
+    {id:5, dip:"Certificate", dipDetail:"Cabin Crew Language and Operation", university:"Myanmar Flight Attendent School", duration:"2019", note: null, img:"/certificate.png" },
+    {id:6, dip:"Certificate", dipDetail:"Airline Ticket Reversation", university:"Trust Vocational Institute", duration:"2019", note: null, img:"/certificate.png" },
   
   ]
 
@@ -89,22 +90,48 @@ const EduScreen = () => {
 
           
   <div className=" grid grid-cols-5 gap-4 max-w-5xl">
-      <div className=" col-span-3 mx-auto">
-      <Image src='/edu.png' width={350} height={700} alt="edu" className="" />
+      <div className=" col-span-2">
+      <Image src='/edu.png' width={350} height={600} alt="edu" className=" flex mx-auto items-center justify-center" />
       
       </div>
-      <div className=" col-span-2">
+      <div className=" col-span-3">
        
       <Swiper
         effect={'cards'}
         grabCursor={true}
         modules={[EffectCards]}
-        className="mySwiper"
+        className="mySwiper mt-36"
+        cardsEffect={{
+          perSlideRotate: 22,
+          perSlideOffset: 10,
+          slideShadows:true
+        }}
       >
         {
           eduList?.map((edu, index) => (
                <SwiperSlide key={index}>
-                <div className=" mt-32 ml-10">
+                <div className="flex flex-col justify-between p-2 mb-1 rounded-r-xl border-r-4 border-slate-100 bg-slate-900 text-white h-80 w-52"
+                    key={index}
+                    onClick={() => openBook(edu)}>
+                        <Image 
+                          src="/education.png" 
+                          alt="Book Cover" 
+                          width={50} 
+                          height={50} 
+                          className="flex mx-auto mt-6" 
+                        />
+                        <p className="tracking-tight drop-shadow-xl -mt-10">
+                          <span className="font-semibold italic font-serif text-xl">{edu.dip}</span> <br/>
+                          <span className=" italic text-lg font-serif tracking-wider">{edu?.dipDetail}</span>  
+                        </p>
+                    
+                        <div
+                          className="w-full rounded-lg text-center mx-auto bg-slate-950 py-1 px-3 text-sm font-medium text-slate-100 focus:outline-none hover:text-black data-[hover]:bg-white/70 data-[focus]:outline-1 data-[focus]:outline-white"
+                        >
+              Detail
+            </div>
+            </div>
+                {/* <div className=" mt-32 ml-10">
                   <div className=" drop-shadow-lg bg-slate-300 backdrop-blur-md  py-3 px-4 h-96 w-80 rounded-xl text-slate-900 transition-opacity duration-500 flex flex-col">
                   <p className="text-2xl font-semibold mt-4 mb-5">{ edu.dip }</p>
                   
@@ -131,7 +158,7 @@ const EduScreen = () => {
                     
                     </div>
                   </div>
-                </div>
+                </div> */}
                   
               </SwiperSlide>
        
@@ -140,7 +167,7 @@ const EduScreen = () => {
        
       </Swiper>
 
-      <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none " onClose={close}>
+      {/* <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none " onClose={close}>
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div className="flex min-h-full items-center justify-center p-4">
             <DialogPanel
@@ -153,48 +180,8 @@ const EduScreen = () => {
             </DialogPanel>
           </div>
         </div>
-      </Dialog>
-     
-      </div>
-  </div>
-
-  <div className=" grid grid-cols-5 gap-4 w-full">
-      <div className=" col-span-2 mx-auto">
-      <Image src='/edu.png' width={350} height={700} alt="edu" className="" />
-      
-      </div>
-      <div className=" col-span-3">
-       
-      <div className=" grid grid-cols-3 gap-3 mt-20">
-        {
-          eduList?.map((edu, index) => (
-    
-              <div className="flex flex-col justify-between p-2 my-1 rounded-r-xl border-r-4 border-slate-100 bg-slate-900 text-white w-60 h-80"
-                    key={index}
-                    onClick={() => openBook(edu)}>
-                        <Image 
-                          src="/diploma.png" 
-                          alt="Book Cover" 
-                          width={60} 
-                          height={60} 
-                          className="flex mx-auto mt-6" 
-                        />
-                        <p className="tracking-tight font-semibold text-2xl drop-shadow-xl">{edu.dip}</p>
-                    
-                        <div
-                          className="w-full rounded-lg text-center mx-auto bg-slate-950 py-1 px-3 text-sm font-medium text-slate-100 focus:outline-none hover:text-black data-[hover]:bg-white/70 data-[focus]:outline-1 data-[focus]:outline-white"
-                        >
-              Detail
-            </div>
-            </div>
-
-          ))
-        }
-        
-       
-      </div>
-
-      <Dialog open={isBookOpen} as="div" className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClose={close}>
+      </Dialog> */}
+       <Dialog open={isBookOpen} as="div" className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" onClose={close}>
       <div className="fixed inset-0 z-10 overflow-y-auto" onClick={closeBook} /> {/* This div captures clicks to close the modal */}
         
         <DialogPanel className="flex items-center justify-center min-h-screen p-4">
@@ -214,7 +201,10 @@ const EduScreen = () => {
                           height={70} 
                           className="flex mx-auto mt-6" 
                         />
-                        <p className="tracking-tight font-semibold text-3xl drop-shadow-xl">{bookItemData?.dip}</p>
+                          <p className="tracking-tight drop-shadow-xl -mt-10">
+                          <span className="font-semibold italic font-serif text-xl">{bookItemData?.dip}</span> <br/>
+                          <span className=" italic text-lg font-serif tracking-wider">{bookItemData?.dipDetail}</span>  
+                        </p>
                     
                         <div
                           className="w-full rounded-lg text-center mx-auto bg-slate-950 py-4 px-3 text-sm font-medium text-slate-100 focus:outline-none hover:text-black data-[hover]:bg-white/70 data-[focus]:outline-1 data-[focus]:outline-white"
@@ -261,7 +251,48 @@ const EduScreen = () => {
       </Dialog>
      
       </div>
-</div>
+  </div>
+
+  {/* <div className=" grid grid-cols-5 gap-4 w-full">
+      <div className=" col-span-2 mx-auto">
+      <Image src='/edu.png' width={350} height={700} alt="edu" className="" />
+      
+      </div>
+      <div className=" col-span-3">
+       
+      <div className=" grid grid-cols-3 gap-3 mt-20">
+        {
+          eduList?.map((edu, index) => (
+    
+              <div className="flex flex-col justify-between p-2 my-1 rounded-r-xl border-r-4 border-slate-100 bg-slate-900 text-white w-48 h-64"
+                    key={index}
+                    onClick={() => openBook(edu)}>
+                        <Image 
+                          src="/diploma.png" 
+                          alt="Book Cover" 
+                          width={40} 
+                          height={40} 
+                          className="flex mx-auto mt-6" 
+                        />
+                        <p className="tracking-tight font-semibold text-xl drop-shadow-xl">{edu.dip}</p>
+                    
+                        <div
+                          className="w-full rounded-lg text-center mx-auto bg-slate-950 py-1 px-3 text-sm font-medium text-slate-100 focus:outline-none hover:text-black data-[hover]:bg-white/70 data-[focus]:outline-1 data-[focus]:outline-white"
+                        >
+              Detail
+            </div>
+            </div>
+
+          ))
+        }
+        
+       
+      </div>
+
+     
+     
+      </div>
+</div> */}
 
 
 

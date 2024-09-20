@@ -75,3 +75,94 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     </div>
   );
 };
+
+
+
+
+        {/* <div className=" mt-32 ml-10">
+                  <div className=" drop-shadow-lg bg-slate-300 backdrop-blur-md  py-3 px-4 h-96 w-80 rounded-xl text-slate-900 transition-opacity duration-500 flex flex-col">
+                  <p className="text-2xl font-semibold mt-4 mb-5">{ edu.dip }</p>
+                  
+                  <div className=" flex flex-col justify-center items-start flex-grow font-semibold px-2">
+                    <div className="flex flex-row  my-1">
+                     <IconBuildingBank className="mr-2 "/>
+                      <p>{edu.university}</p>
+                    </div>
+                    <div className="flex flex-row  my-1">
+                      < IconClock className=" mr-2" />
+                      <p>{edu.duration}</p>
+                    </div>
+                    {
+                      edu.note && (
+                        <div className="flex flex-row  my-1 ">
+                          <IconAward className="mr-2"/>
+                          <p>{edu.note}</p>
+                        </div>
+                      )}
+                    </div>
+                    <div className="flex my-2">
+                      <Image onClick={() => open(edu.img)} src={edu.img} width={100} height={100} alt="certificate" className="rounded-md drop-shadow-md" />
+                   
+                    
+                    </div>
+                  </div>
+                </div> */}
+
+
+
+
+ {/* <Swiper
+        effect={'cards'}
+        grabCursor={true}
+        modules={[EffectCards]}
+        className="mySwiper"
+        cardsEffect={{
+          perSlideRotate: 20,
+          perSlideOffset: 20,
+          slideShadows:true
+        }}
+      >
+        {
+          eduList?.map((edu, index) => (
+               <SwiperSlide key={index}>
+                <div className="flex flex-col justify-between p-2 mb-1 rounded-r-xl border-r-4 border-slate-100 bg-slate-900 text-white h-72 w-48"
+                    key={index}
+                    onClick={() => openBook(edu)}>
+                        <Image 
+                          src="/education.png" 
+                          alt="Book Cover" 
+                          width={50} 
+                          height={50} 
+                          className="flex mx-auto mt-6" 
+                        />
+                        <p className="tracking-tight drop-shadow-xl -mt-10">
+                          <span className="font-semibold italic font-serif text-xl">{edu.dip}</span> <br/>
+                          <span className=" italic text-lg font-serif tracking-wider">{edu?.dipDetail}</span>  
+                        </p>
+                    
+                        <div
+                          className="w-full rounded-lg text-center mx-auto bg-slate-950 py-1 px-3 text-sm font-medium text-slate-100 focus:outline-none hover:text-black data-[hover]:bg-white/70 data-[focus]:outline-1 data-[focus]:outline-white"
+                        >
+              Detail
+            </div>
+            </div>
+            </SwiperSlide>
+          ))
+        }
+       
+      </Swiper> */}
+
+      {/* <Dialog open={isOpen} as="div" className="relative z-50 focus:outline-none " onClose={close}>
+        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <DialogPanel
+              transition
+              className="w-full max-w-xl ring-2 ring-white rounded-xl bg-white/10  backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
+            >
+            
+              <Image src={item} width={800} height={600} alt={""} />
+            
+            </DialogPanel>
+          </div>
+        </div>
+      </Dialog> */}
