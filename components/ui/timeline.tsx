@@ -37,7 +37,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div
-      className="w-full bg-black text-white  md:px-10"
+      className="w-full text-white  md:px-10"
       ref={containerRef}
     >
        <Image src='/success.png' width={100} height={100} alt="edu" className= " mx-auto flex" />
@@ -53,7 +53,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             </h2>
       </div>
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 pt-10 bg-black text-white">
+      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 pt-10 text-white">
         {data.map((item, index) => (
           <div key={index} className="relative flex w-full pt-10 md:pt-40 pb-5">
           {/* Content Box */}

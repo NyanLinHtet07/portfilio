@@ -60,6 +60,7 @@
 }
 
 @layer base {
+  
   * {
     @apply border-border;
   }
@@ -90,6 +91,10 @@
     transform: rotateY(-180deg); /* Hide the back page initially by rotating */
   }
   
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 

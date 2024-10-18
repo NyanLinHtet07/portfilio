@@ -7,9 +7,9 @@ import Image from 'next/image';
 
 const AwardedScreen = () => {
     return (
-        <div className=' pt-32'>
+        <div className=' pt-32 pb-32'>
              
-            <LampContainer>
+            {/* <LampContainer> */}
             <Image src='/trophy.png' width={80} height={80} alt="trophy" className=" flex mx-auto  drop-shadow-xl -mt-10" />
                 <motion.h1
                     initial={{ opacity:0.5, y: 100}}
@@ -50,7 +50,7 @@ const AwardedScreen = () => {
                     Distinction Award in Supply Chain and Logistics Management (NCFE UK Diploma) <br /> 2022
                 </motion.p>
 
-            </LampContainer>
+            {/* </LampContainer> */}
            
         </div>
     )

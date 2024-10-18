@@ -43,27 +43,13 @@ const WhoAmIScreen = () => {
     // });
 
     return(
-        <div className=" pt-20">
-             
-          
-            {/* <WordPullUp
-              className="text-4xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
-              words="WHO AM I"
-            /> */}
-            <h2 className="text-white uppercase text-4xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
+        <div className="">
+
+            <h2 className="text-white uppercase text-4xl mb-12 font-bold drop-shadow-lg text-center">
                WHO AM I
             </h2>
             <div className=" mt-4 text-left w-10/12 mx-auto">
               <TextGenerateEffect words={words} />
-            {/* <TypingPageEffect texts={[
-                "I am a dedicated Logistics Specialist with over three years of practical experience and a strong academic foundation from various universities and colleges.",
-                "My role at Nordic Group Limited has involved collaborating with leading industry players such as Maersk, MSC, DHL, Kuehne+Nagel, and DB Schenker.",
-                "This has provided me with valuable insights across multiple sectors, including garment trading, automotive distribution, pharmaceuticals, food and beverage, chemicals, and NGO/INGO organizations.",
-                "This diverse experience has refined my expertise in logistics and supply chain management, with a strong focus on compliance standards.",
-                "I am enthusiastic about leveraging my skills to make impactful contributions and drive success to your esteemed organization."
-              ]}  
-              speed={50}
-              delayBetweenLines = {1000} /> */}
             </div>
             
           </div>

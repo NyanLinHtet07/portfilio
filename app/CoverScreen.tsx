@@ -110,8 +110,8 @@ export default function CoverScreen(){
     return (
         
       
-        <div className=" relative">
-          <div className=" relative mt-24 w-60 h-60 mx-auto">
+        <div className=" relative pt-10">
+          <div className=" relative w-60 h-60 mx-auto">
           <Image src='/front.png' alt="profile" 
                       width={220} height={220} 
                       className="object-cover drop-shadow-md px-4 py-4 rounded-full"/>
@@ -120,26 +120,6 @@ export default function CoverScreen(){
                       className=" absolute -top-5 right-4 object-cover drop-shadow-2xl filter-white" />
           </div>
             
-            {/* <Parallax scale={[0.5,1.5]}  speed={10}  className=" relative mt-24 w-60 h-60 mx-auto">
-              <Image src='/front.png' alt="profile" 
-                      width={220} height={220} 
-                      className="object-cover drop-shadow-md px-4 py-4 rounded-full"/>
-
-              <Image src='/curveDesign1.png' 
-                      width={240} height={220} alt="curve" 
-                      className=" absolute -top-5 right-4 object-cover drop-shadow-2xl filter-white" />
-            </Parallax> */}
-
-            {/* <div className=" relative mt-24 w-60 h-60 mx-auto">
-                 <Image src='/profile.png' alt="profile" 
-                      width={200} height={200} 
-                      className="object-cover drop-shadow-md px-4 py-4 rounded-full"/>
-
-              <Image src='/curveDesign1.png' 
-                      width={240} height={220} alt="curve" 
-                      className=" absolute -top-5 right-4 object-cover drop-shadow-2xl filter-white" />
-            </div> */}
-
             <WordPullUp
               className="text-2xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
               words="Kumari Kadial @ JuJu"
@@ -160,7 +140,7 @@ export default function CoverScreen(){
 
            
 
-            <div className=" flex mt-5 justify-center h-[35rem] w-full">
+            <div className=" flex mt-5 justify-center h-[15rem] w-full">
                 <FloatingDock
                   mobileClassName="translate-y-20"
                   items={links}
