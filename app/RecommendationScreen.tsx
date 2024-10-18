@@ -20,7 +20,7 @@ const RecommendationScreen = () => {
                      alt="quotes"/>
                      <span className="italic tracking-wider indent-16 text-xs">
                      I had the pleasure of working with Ju Ju @ Kumari in the Business Development Department at Nordic Group Ltd for nearly two years.
-                    During our time together, One of the Nordic Group's youngest team members with a strong passion. She is always interested in learning new things, Never be afraid to set high standards for herself and others, 
+                    During our time together, One of the Nordic Group youngest team members with a strong passion. She is always interested in learning new things, Never be afraid to set high standards for herself and others, 
                     and to encourage others to achieve good results. 
                     Ju Ju @ Kumari was a successful, easy-to-manage associate who always went above and beyond to meet deadlines with a positive attitude.
                     She leans toward participating in prospective opportunities with various parties. She is also a highly responsible and accountable person for her own and others. 
