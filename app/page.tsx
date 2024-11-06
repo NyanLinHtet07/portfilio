@@ -21,6 +21,8 @@ import RecommendationScreen from "./RecommendationScreen";
 import SlideNav from "./SlideNav";
 import SlideNavDash from "./SlideNavDash";
 import { Switch } from "@headlessui/react";
+import { IconMoon, IconSun } from "@tabler/icons-react";
+
 
 
 export default function Home() {
@@ -70,26 +72,28 @@ export default function Home() {
                   </div>
                   
                   <Switch.Group>
-                      <div className=" absolute top-0 right-10 flex justify-end items-center space-x-2 z-50">
+                      <div className=" absolute top-0 left-10 mt-10 flex justify-end items-center space-x-2 z-50">
                         {/* <Switch.Label className="text-gray-100 dark:text-gray-300">
                           {isLightOn ? 'Light Mode' : 'Dim Mode'}
                         </Switch.Label> */}
                         <Switch
                           checked={isLightOn}
                           onChange={setIsLightOn}
-                          className={`${isLightOn ? 'bg-blue-600' : 'bg-gray-200'}
-                                        relative inline-flex items-center h-6 rounded-full w-11 transition-colors focus:outline-none `}>
-                            <span
-                              className={`${
-                              isLightOn ? 'translate-x-6' : 'translate-x-1'}
-                               inline-block w-4 h-4 transform bg-white rounded-full transition-transform`} />
+                          className={`${isLightOn ? 'bg-gray-600' : 'bg-gray-200'}
+                                        relative inline-flex items-center h-7 rounded-full w-11 transition-colors focus:outline-none`}>
+                          <span
+                            className={`${
+                              isLightOn ? 'translate-x-6' : 'translate-x-1'
+                            } inline-block w-4 h-4 transform bg-white rounded-full transition-transform flex items-center justify-center`}>
+                            {isLightOn ? <IconSun className="w-5 h-5 text-yellow-500" /> : <IconMoon className="w-5 h-5 text-gray-500" />}
+                          </span>
                         </Switch>
                       </div>
                     </Switch.Group>
                  
 
                     <div className=" relative" style={{ overflowY:'auto', height:'100vh', paddingTop:'8px'}}>
-                    <div className="backdrop-blur-sm bg-white bg-opacity-20 rounded-lg p-6 max-w-6xl mx-auto">
+                    <div className="backdrop-blur-sm bg-white bg-opacity-20 rounded-lg p-6 max-w-7xl mx-auto">
                     
                       <section id="about">
                         <CoverScreen/>

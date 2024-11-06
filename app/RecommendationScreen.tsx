@@ -18,7 +18,7 @@ const RecommendationScreen = () => {
                      height={40}
                      className=" object-cover"
                      alt="quotes"/>
-                     <span className="italic tracking-wider indent-16 text-xs">
+                     <span className="italic tracking-wider indent-16 text-sm">
                      I had the pleasure of working with Ju Ju @ Kumari in the Business Development Department at Nordic Group Ltd for nearly two years.
                     During our time together, One of the Nordic Group youngest team members with a strong passion. She is always interested in learning new things, Never be afraid to set high standards for herself and others, 
                     and to encourage others to achieve good results. 
