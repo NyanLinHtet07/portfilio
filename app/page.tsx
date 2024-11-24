@@ -39,16 +39,23 @@ export default function Home() {
                          <div
                         className={`absolute inset-0 transition-all duration-1000 ${
                           isLightOn
-                            ? ' bg-gradient-to-r from-cyan-300 via-cyan-700 to-cyan-950'
-                            : 'bg-gray-950'
+                            ? ' bg-gradient-to-r from-cyan-300 via-cyan-700 to-cyan-800'
+                            : 'bg-slate-950'
                         }`}
                       >
-                        <Image 
+                        {/* <Image 
                           src="/bulb1.png" 
                           width={250} 
                           height={100} alt="test" 
                           className={`bottom-0 absolute -left-24  object-center transition-all duration-700 object-cover ${
                             isLightOn ? 'opacity-50' : 'filter grayscale opacity-10'
+                          }`} /> */}
+                           <Image 
+                          src="/bg.png" 
+                          fill={true}
+                           alt="test" 
+                          className={` transition-all duration-700 object-cover ${
+                            isLightOn ? 'opacity-60' : 'filter grayscale opacity-30'
                           }`} />
 
                         
@@ -60,8 +67,15 @@ export default function Home() {
                       </div>
 
 
-                      <div
+                      {/* <div
                         className={`absolute bottom-48 -left-16 border-none h-44 w-44 rounded-full transition-all duration-500 ${
+                          isLightOn
+                            ? 'bg-sky-900 bg-opacity-40 shadow-[0_0_100px_50px_rgba(0,109,235,0.9)]'
+                            : 'bg-gray-900 bg-opacity-10'
+                        }`}
+                      ></div> */}
+                   <div
+                        className={`absolute top-10 left-1/3 opacity-50 border-none h-10 w-10 rounded-full transition-all duration-500 ${
                           isLightOn
                             ? 'bg-sky-900 bg-opacity-40 shadow-[0_0_100px_50px_rgba(0,109,235,0.9)]'
                             : 'bg-gray-900 bg-opacity-10'
@@ -93,7 +107,7 @@ export default function Home() {
                  
 
                     <div className=" relative" style={{ overflowY:'auto', height:'100vh', paddingTop:'8px'}}>
-                    <div className="backdrop-blur-sm bg-white bg-opacity-20 rounded-lg p-6 max-w-7xl mx-auto">
+                    {/* <div className="backdrop-blur-sm bg-white bg-opacity-10 rounded-lg p-6 max-w-7xl mx-auto"> */}
                     
                       <section id="about">
                         <CoverScreen/>
@@ -125,7 +139,7 @@ export default function Home() {
                       <RecommendationScreen/>
                       </section>  
                       </div>  
-                    </div>
+                    {/* </div> */}
                 
 
       </main>
