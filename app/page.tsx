@@ -32,7 +32,7 @@ export default function Home() {
     return (
         <main className=" relative">
           {/** slider  */}
-              <SlideNav/>
+              <SlideNav isLightOn={isLightOn} />
 
           {/** Bulb */}
                 <div className=" fixed inset-0">

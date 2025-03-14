@@ -2,8 +2,13 @@
 import Image from "next/image";
 import React, { useState } from "react";
 
+interface SlideNavProps{
+  isLightOn: boolean
+}
 
-export default function SlideNav() {
+const SlideNav:React.FC<SlideNavProps> = ({
+  isLightOn
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -17,8 +22,8 @@ export default function SlideNav() {
         className="fixed top-4 right-20 z-50 text-white"
         onClick={toggleSidebar}
       >
-        {isOpen ? <Image src="/5.png" width={100} height={100} alt="logo" className=" rounded-full"/> 
-                : <Image src="/5.png" width={100} height={100} alt="logo" className=" rounded-full drop-shadow-lg"/> }
+        {isLightOn ? <Image src="/logo1.png" width={70} height={70} alt="logo" className=" drop-shadow-lg"/> 
+                : <Image src="/logo2.png" width={70} height={70} alt="logo" className=" drop-shadow-lg"/> }
       </button>
 
       {/* Sidebar */}
@@ -66,3 +71,5 @@ export default function SlideNav() {
     </div>
   );
 }
+
+export default SlideNav;
