@@ -15,7 +15,7 @@ const LanguageScreen:React.FC = () => {
     ];
     return(
         <>
-         <h2 className="text-white uppercase text-4xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
+         <h2 className="text-white uppercase text-3xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
          Multilingual skills
         </h2>
        {/* <div className=" flex justify-around px-4 py-10">

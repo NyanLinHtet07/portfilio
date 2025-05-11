@@ -45,7 +45,7 @@ const WhoAmIScreen = () => {
     return(
         <div className="">
 
-            <h2 className="text-white uppercase text-4xl mb-12 font-bold drop-shadow-lg text-center">
+            <h2 className="text-white uppercase text-3xl mb-12 font-bold drop-shadow-lg text-center">
                WHO AM I
             </h2>
             <div className=" mt-4 text-left w-10/12 mx-auto">

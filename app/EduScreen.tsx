@@ -86,7 +86,7 @@ const EduScreen = () => {
               className=" uppercase text-4xl font-bold tracking-[-0.02em] text-white dark:text-white md:text-5xl md:leading-[5rem]"
               words="Accomplished Academic Achievements"
             /> */}
-  <h2 className="text-white uppercase text-4xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
+  <h2 className="text-white uppercase text-3xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
   Accomplished Academic Achievements
                  </h2>
 

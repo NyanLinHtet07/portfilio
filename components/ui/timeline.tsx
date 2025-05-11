@@ -48,7 +48,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               words="DISTINGUISHED PROFESSIONAL JOURNEY"
             /> */}
       
-      <h2 className="text-white uppercase text-4xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
+      <h2 className="text-white uppercase text-3xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
       DISTINGUISHED PROFESSIONAL JOURNEY
             </h2>
       </div>

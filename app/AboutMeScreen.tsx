@@ -34,7 +34,7 @@ const AboutMeScreen = () => {
                     className={` text-white text-4xl font-bold drop-shadow-lg text-center w-10/12 transition-opacity duration-1000 ${isTextVisible ? 'opacity-100' : 'opacity-0'} `}>
                     Driven Professional Seeking Challenging Opportunities in a Dynamic Environment 
                 </div> */}
-                <h2 className="text-white uppercase text-4xl mt-20 mb-12 px-2 font-bold drop-shadow-lg text-center">
+                <h2 className="text-white uppercase text-3xl mt-20 mb-12 px-2 font-bold drop-shadow-lg text-center">
                 Professional Driven and Challenging Opportunities Seeking in a Dynamic Environment
                  </h2>
                 {/* <WordPullUp

@@ -19,7 +19,7 @@ const AwardedScreen = () => {
                         duration: 0.8,
                         ease: "easeInOut"
                     }}
-                    className=' bg-gradient-to-br from-slate-300 to-slate-600 pt-2 pb-4 bg-clip-text text-center text-4xl font-bold tracking-tight text-transparent md:text-4xl'    
+                    className=' bg-gradient-to-br from-slate-300 to-slate-600 pt-2 pb-4 bg-clip-text text-center text-3xl font-bold tracking-tight text-transparent md:text-4xl'    
                 >
                     HONORED WITH RECOGNIZED AWARDS
                 </motion.h1>

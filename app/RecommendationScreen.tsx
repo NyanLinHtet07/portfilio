@@ -19,7 +19,7 @@ const RecommendationScreen = () => {
    
    return(
         <div className=" pb-20">
-             <h2 className="text-white uppercase text-4xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
+             <h2 className="text-white uppercase text-3xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
                 What My Colleagues Say
              </h2>
              <div>

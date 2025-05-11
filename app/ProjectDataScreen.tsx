@@ -41,7 +41,7 @@ const ProjectDataScreen:React.FC = () => {
 
     return (
         <>
-        <h2 className="text-white uppercase text-4xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
+        <h2 className="text-white uppercase text-3xl mt-20 mb-12 font-bold drop-shadow-lg text-center">
             Accomplished Projects
         </h2>
         <div className="max-w-5xl mx-auto px-8">
